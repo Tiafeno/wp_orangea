@@ -1,0 +1,525 @@
+/*
+  Theme Name: Orangea by FALICREA
+  Theme URI: https://orangea.com/
+  Author: Falicrea team
+  Author URI: https://falicrea.com/
+  Description:
+  License: MIT License v2 or later
+  License URI:
+  Tags: tourisme, Hotellerie, Nosy be, Madagascar, Malagasy, Malgache, Voyage, Réstaurant, Beach, Nosy
+  Text Domain: orangea
+
+*/
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.__org_parent p,
+.__org_parent span {
+    color: white;
+}
+
+.menu-container {
+    position: relative;
+    z-index: 11;
+}
+
+.__org_menu {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.__org_menu > .__primary_menu {
+    float: right;
+}
+
+.__org_menu > .__primary_menu .__menu {
+    display: inline-block;
+}
+
+.__top_menu .__menu {
+    display: inline-block;
+    float: right;
+}
+
+.__top_menu ul {
+    padding-right: 35px;
+}
+
+.__top_menu ul > li > a {
+    display: block;
+    color: #FFFFFF;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    padding: 5px !important;
+    border: none !important;
+}
+
+.__primary_menu .__menu > ul {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.__menu > ul > li,
+.__menu_dashed > ul > li{
+    display: inline-block;
+}
+
+.__nav_offcanvas .__menu > ul > li {
+    display: block !important;
+}
+
+.__primary_menu .__menu > ul > li > a {
+    display: block;
+    color: white;
+    padding-top: 12px;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+.__menu_dashed  li > a {
+    padding-right: 5px !important;
+    padding-left: 10px !important;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.__primary_menu .__menu > ul > li > a:hover,
+.__top_menu ul > li > a:hover,
+.__menu_dashed  li > a:hover{
+    color: #F6AC62;
+    text-decoration: none;
+
+}
+
+.__primary_menu .__primary_menu_container >.line,
+.__menu_dashed .line {
+    height: 3px;
+    width: 68px;
+    background-color: #F6AC62;
+}
+.__primary_menu_container li:nth-child(2):hover ~ .line {
+    transform: translate(68px);
+}
+
+
+/*.__primary_menu .__menu li > a::after {*/
+/*content: "";*/
+/*display: block;*/
+/*width: 35%;*/
+/*height: 2px;*/
+/*}*/
+
+/*.__primary_menu .__menu li > a:hover::after {*/
+/*content: "";*/
+/*display: block;*/
+/*width: 35%;*/
+/*height: 2px;*/
+/*background: #dca568;*/
+/*-webkit-transition: bakcground 1s; !* Chrome *!*/
+/*-moz-transition: bakcground 1s; !* Mozilla *!*/
+/*-o-transition: bakcground 1s; !* Opera *!*/
+/*transition: background 1s;*/
+/*}*/
+
+.__org_bg_top,
+.__org_bg_bottom {
+    z-index: 10 !important;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+@keyframes swell {
+    0%, 100% {
+        transform: translate3d(0,-25px,0);
+    }
+    50% {
+        transform: translate3d(0,5px,0);
+    }
+}
+
+
+/* begin first section */
+div.org-section .uk-container {
+    min-height: 40em;
+}
+
+div.org-section > .__org-bg {
+    background-image: url("img/plage.jpg");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .end */
+
+/* begin second section */
+div.org-1-section .__org_bg_bottom {
+    height: 72px;
+    background: url("img/SVG/2-bottom-bg.svg") repeat-x;
+    background-position: left top;
+    position: relative;
+}
+
+div.org-1-section .__org_bg_top {
+    height: 72px;
+    width: 100%;
+    background: url("img/SVG/2-top-bg.svg") repeat-x;
+    position: relative;
+    background-position: center bottom;
+}
+
+
+div.org-1-section > .__org-bg {
+    background: rgb(251,174,66);
+    background: -moz-linear-gradient(top, rgba(251,174,66,1) 25%, rgba(244,115,51,1) 97%);
+    background: -webkit-linear-gradient(top, rgba(251,174,66,1) 25%,rgba(244,115,51,1) 97%);
+    background: linear-gradient(to bottom, rgba(251,174,66,1) 25%,rgba(244,115,51,1) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbae42', endColorstr='#f47333',GradientType=0 );
+}
+
+
+div.org-1-section .__org_container {
+    min-height: 38vh;
+}
+/*
+  @media (max-width: 1600px) {
+    div.org-1-section .__org-bg > .__org_container {
+      width: 1164px;
+    }
+  }
+*/
+
+/* .end */
+
+/* begin three section */
+div.org-2-section > .__org-bg {
+    background-image: url("img/hebergement.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+}
+
+div.org-2-section .__org_container {
+    min-height: 60em;
+    height: 100vh;
+    display: inline-table;
+    display: -moz-inline-table;
+}
+
+div.org-2-section .__org_bg_sensor {
+    padding-top: 5em;
+}
+div.org-2-section .__org_support {
+    background-color: rgba(40, 37, 37);
+    border-radius: 25px;
+}
+@media screen and (max-width: 960px) {
+    div.org-2-section > .__org-bg {
+        background-position: right top;
+    }
+}
+@media screen and (min-width: 640px) {
+    div.org-2-section .__org_support {
+        width: 450px;
+    }
+}
+/* .end */
+
+/* begin four  section */
+div#org-3-section > .__org-bg {
+    background-image: url("img/three-bg.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 75%;
+}
+
+div#org-3-section .__org_container {
+    background-color: rgba(240, 248, 255, 0.20);
+}
+
+div#org-3-section .__org_bg_top {
+    height: 72px;
+    background-image: url("img/SVG/4-top-bg.svg");
+    background-position: left bottom;
+    background-size: contain;
+    background-repeat: repeat-x;
+    position: relative;
+}
+
+div#org-3-section.__org_parent h2,
+div#org-3-section.__org_parent .sub.header {
+    color: #F28D23 !important;
+    display: block;
+    margin-top: 25px;
+}
+
+div#org-3-section.__org_parent p {
+    color: #F28D23;
+}
+
+div#org-3-section .__menu li:nth-child(n + 2) a {
+    border-left-color: #F28D23;
+}
+
+div#org-3-section .__menu li > a:hover {
+    color: #F28D23;
+}
+
+div#org-3-section .__menu li > a {
+    color: #ACACAC;
+}
+
+/* .end */
+
+/* begin five section */
+div.org-4-section > .__org-bg {
+    background: #0067cf url("img/2x/5-content-bg@2x.png") no-repeat left top;
+    background-size: contain;
+}
+
+div.org-4-section .__org_bg_top {
+    height: 100px;
+    background-size: contain;
+    background-image: url("img/2x/5-top-bg@2x.png");
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    position: relative;
+    z-index: 8;
+}
+
+div.org-4-section .__org_container {
+
+}
+
+div.org-4-section .__org_bg_bottom {
+    height: 100px;
+    background-size: contain;
+    background-image: url("img/SVG/5-bottom-bg.svg");
+    background-repeat: repeat-x;
+    background-position: left -4px;
+    position: relative;
+    z-index: 8;
+}
+
+div.org-4-section.__org_parent h2,
+div.org-4-section.__org_parent .sub.header {
+    color: #FFFFFF !important;
+}
+
+div.org-4-section .__menu li:nth-child(n + 2) a {
+    border-left-color: #ACACAC;
+}
+
+div.org-4-section .__menu li > a:hover,
+div.org-4-section .__menu li > a.active {
+    color: #FFFFFF;
+}
+
+div.org-4-section .__menu li > a {
+    color: #ACACAC;
+}
+
+/* .end */
+
+/* begin six section */
+div.org-5-section > .__org-bg {
+    background: url("img/2x/restaurent-bg@2x.png") no-repeat left bottom;
+    background-size: cover;
+}
+
+div.org-5-section .__org_container {
+    min-height: 60em;
+}
+
+div.org-5-section .__org_header_white {
+    font-size: 4em !important;
+    line-height: 0.7;
+}
+
+.org-5-section #restaurant {
+    background: rgba(4, 4, 4, 0.83);
+    padding: 20px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+@media screen and (min-width: 640px) {
+    div.org-5-section .__org_support {
+        width: 450px;
+    }
+}
+
+/* .end */
+
+/* seven section */
+div.org-7-section .__org_bg_top {
+    height: 350px;
+    background-size: contain;
+    background: url("img/2x/6-top-bg@2x.png") no-repeat left bottom;
+    position: relative;
+    z-index: 8;
+}
+
+.org-7-section .__org-bg {
+    background-color: #282525;
+}
+
+/* .end */
+
+.__org_parallax,
+.__org_parallax_last {
+    background-attachment: fixed
+}
+
+.__org_header_white {
+    font-size: 4.6em;
+    color: white !important;
+    word-wrap: break-word;
+    line-height: 0.7;
+}
+
+.__org_header_border {
+
+}
+
+.__org_header_border::after {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 2em;
+    height: 4px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+}
+
+.__org_devider > .__org_devider_bg {
+    background-color: rgba(1, 1, 1, 0.47);
+    position: absolute;
+    z-index: 7;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.__org_devider_border_right {
+    border-right: 2px solid #bbbaba;
+}
+
+.__org_devider_border_left {
+    border-left: 2px solid #bbbaba;
+}
+
+@media (max-width: 960px) {
+    .__org_devider_border_right {
+        border-right: none;
+    }
+
+    .__org_devider_border_left {
+        border-left: none;
+    }
+}
+
+.__org_support {
+    position: relative;
+    z-index: 9;
+}
+
+.__org_support p {
+    margin: 0;
+}
+
+.__org_container .__menu li:nth-child(n + 2) a {
+    border-left-width: 1px;
+    border-left-style: dotted;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.__org_container .__menu li:first-child a {
+    padding-right: 5px;
+}
+
+.__org_container .__menu li {
+
+}
+
+.__org_container .__menu li > a:hover {
+    text-decoration: none;
+}
+
+.__org_container .__menu li > a {
+    font-size: 13px;
+}
+
+/**
+640, 960, -> 959,
+ */
+.__org_container {
+    min-height: 10em;
+}
+
+.__org-bg {
+    position: relative;
+}
+
+.org-section .__org-bg-shadow {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4f4f4f+0,ffffff+71 */
+    background: none; /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(79, 79, 79, 1) -40%, transparent 45%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(79, 79, 79, 1) -40%, transparent 45%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(79, 79, 79, 1) -40%, transparent 45%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-attachment: fixed;
+    position: relative;
+}
+
+.__org_footer {
+    background: #0f0f10;
+}
+
+/**
+Titre et sous-titre
+**/
+.__org_parent h2.ui.header {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    line-height: 0.8;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.__org_parent h2 > .sub.header {
+    font-size: 45px !important;
+    line-height: 0.5 !important;
+}
+
+svg image {
+    cursor: pointer;
+}

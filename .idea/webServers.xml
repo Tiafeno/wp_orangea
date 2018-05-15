@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f2e03365-35ec-4938-b04e-adef4b40d8a3" name="Orangea" url="http://orangea.falicrea.com">
+        <fileTransfer host="ftp.mikeamada.com" port="22" rootFolder="/home/mikeamad/public_html/orangea/wordpress/wp-content/themes/wp_orangea" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
