@@ -94,7 +94,7 @@ if ( ! empty($accommodation_page)):
 
 													if ( empty($subchilds)) :
 													if ($is_child) :  ?>
-													<div class="uk-width-1-1 uk-width-1-2@s uk-float-left">
+													<div class="uk-width-1-1 uk-width-1-2@s uk-float-left __org_tab_card">
 														<ul class="uk-padding-remove uk-margin-remove-bottom">
 															<?php endif;
 
@@ -104,7 +104,7 @@ if ( ! empty($accommodation_page)):
 															continue;
 															endif;
 															?>
-															<div class="uk-width-1-1 uk-width-1-2@s uk-float-left">
+															<div class="uk-width-1-1 uk-width-1-2@s uk-float-left __org_tab_card">
 																<?php if ( ! is_null($subchilds)) :?>
 																	<h5 class="ui header uk-margin-remove-vertical"><?= $child->post_title ?></h5>
 																<?php endif; ?>

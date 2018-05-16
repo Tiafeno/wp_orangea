@@ -520,6 +520,13 @@ Titre et sous-titre
     line-height: 0.5 !important;
 }
 
+.__org_tab_card {
+
+}
+.__org_tab_card h5 {
+    color: #F6AC62 !important;
+}
+
 svg image {
     cursor: pointer;
 }

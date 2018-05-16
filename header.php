@@ -207,8 +207,32 @@
             });
           
         }
+
+        // @sync(onResize)
+        // Set the minimum height of Tab Card automatically @hebergement
+        function setMinHeight () {
+          var tabCards = jQ('.__org_tab_card');
+          var heights = [120]; // Added default value
+          var maxHeightValue = null;
+
+          // Get max value
+          jQ.each(tabCards, function (index, element) {
+            var elHeight = jQ(element).innerHeight();
+            heights.push( elHeight );
+            console.log(elHeight);
+          });
+          maxHeightValue = heights.reduce(function(a, b) {
+            return Math.max(a, b);
+          });
+          tabCards.css({
+            height: parseInt(maxHeightValue)
+          });
+        }
         resizeEight();
+        setMinHeight();
         jQ(window).resize(function () {
+          setMinHeight();
+
           sectionWidth = eightSection.innerWidth();
           resizeEight();
         });
@@ -265,6 +289,8 @@
       position: relative;
       top: -2px;
     }
+
+
 
     /* Section 5 et 6 */
     .org-5-section > .__org-bg {
