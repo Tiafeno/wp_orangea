@@ -90,7 +90,7 @@
           backgroundPosition();
         };
         __init__();
-        jQ(window).resize(function () {
+        jQ( window ).resize(function () {
           backgroundPosition();
         });
 
@@ -120,7 +120,39 @@
         var eightBg = eightSection.find( '.__org-bg' );
         var elContainer = eightSection.find( '.__org_container' );
         var sectionWidth = eightSection.innerWidth();
+
+        // Default data value
         var imgSize = { width: 3992, height: 2242, regression: 180 };
+        
+        /**
+         * Get object image width and height value
+         * @param url String, Image url
+         * @return Promise
+         */
+        function getImageData (url = null) {
+          return new Promise(function (resolve, reject) {
+            if (_.isNull(url)) reject("L'url de l'image est non definie");
+            var image = new Image();
+            image.src = url;
+            resolve({
+              width: image.width,
+              height: image.height
+            });
+          });
+        }
+        
+        /**
+         * Get an url background image by element
+         * @param element jQuery Element
+         * @return string
+         */
+        function getBgImgElement (element) {
+          var bg_url = element.css('background-image');
+          // ^ Either "none" or url("...urlhere..")
+          bg_url = /^url\((['"]?)(.*)\1\)$/.exec(bg_url);
+          bg_url = bg_url ? bg_url[2] : ""; // If matched, retrieve url, otherwise ""
+          return bg_url;
+        }
 
         function addContainerpadding ( mesure ) {
           elContainer
@@ -133,32 +165,47 @@
           var windowWidth = jQ(window).innerWidth();
           var eightBgWidth = eightBg.width();
           var eightBgHeight = eightBg.height();
-
-
           var bgWidth, bgHeight;
-          if (eightBgWidth > eightBgHeight) {
-            bgWidth = eightBgWidth;
-            bgHeight = (bgWidth * imgSize.height) / imgSize.width;
 
-            if (bgHeight < eightBgHeight) {
-              var space = eightBgHeight - bgHeight;
-              bgHeight += space;
-              bgWidth = (bgHeight * imgSize.width) / imgSize.height;
-            }
-          }
-          if (_.isEmpty(bgHeight)) bgHeight = eightBgHeight;
-          var mesure = - Math.ceil((imgSize.regression * eightBgHeight) / bgHeight);
-          eightSection
-            .css({
-              top: mesure + "px",
-              "margin-bottom": mesure + "px"
-            });
+          var imgUrl = getBgImgElement(eightBg);
+          getImageData( imgUrl )
+            .then(function (response) {
 
-          eightBg
-            .css({
-              //"background-size": Math.ceil(bgWidth) + "px " + bgHeight + "px"
+              // Modifier le variable par default
+              var results = response;
+              imgSize.width = results.width;
+              imgSize.height = results.height;
+
+              // Positionner la section
+              if (eightBgWidth > eightBgHeight) {
+                bgWidth = eightBgWidth;
+                bgHeight = (bgWidth * imgSize.height) / imgSize.width;
+
+                if (bgHeight < eightBgHeight) {
+                  var space = eightBgHeight - bgHeight;
+                  bgHeight += space;
+                  bgWidth = (bgHeight * imgSize.width) / imgSize.height;
+                }
+              }
+              if (_.isEmpty(bgHeight)) bgHeight = eightBgHeight;
+              var mesure = - Math.ceil((imgSize.regression * eightBgHeight) / bgHeight);
+              eightSection
+                .css({
+                  top: mesure + "px",
+                  "margin-bottom": mesure + "px"
+                });
+
+              eightBg
+                .css({
+                  //"background-size": Math.ceil(bgWidth) + "px " + bgHeight + "px"
+                });
+              addContainerpadding( Math.abs(mesure) );
+            })
+            .catch(function (reason) {
+              console.warn( reason );
+              
             });
-          addContainerpadding( Math.abs(mesure) );
+          
         }
         resizeEight();
         jQ(window).resize(function () {
