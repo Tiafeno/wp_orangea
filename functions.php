@@ -92,6 +92,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'lodash', get_template_directory_uri() . '/libs/lodash.min.js', array() );
 	wp_enqueue_script( 'bluebird', get_template_directory_uri() . '/libs/bluebird.min.js', array() );
 	wp_enqueue_script( 'angularjs', get_template_directory_uri() . '/libs/angularjs/angular.js', array() );
+	wp_enqueue_script( 'angularjs-sanitize', '//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js', array("angularjs") );
 
 	wp_enqueue_script( 'jquery-adress', get_template_directory_uri() . '/libs/jquery/jquery.address.js', array( 'jquery' ) );
 
