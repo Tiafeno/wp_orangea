@@ -83,7 +83,8 @@ if ( ! empty($accommodation_page)):
 												return $child->menu_item_parent == $find_parent->ID;
 											});
 											?>
-											<div class="ui tab uk-padding-small uk-padding-remove-horizontal <?= $first_class ?>" data-tab="<?= $parent->post_name ?>">
+											<div class="ui tab uk-padding-small uk-padding-remove-horizontal <?= $first_class ?>" 
+                           data-tab="<?= $parent->post_name ?>">
 												<div class="uk-clearfix">
 													<?php $is_child = true; ?>
 													<?php foreach ($childs as $it => $child) {

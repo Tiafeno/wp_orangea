@@ -28,7 +28,7 @@
     allMenuLine,
     currentList;
 
-  allMenuLine = $( ".__menu_line");
+  allMenuLine = $( ".__menu_line" );
   allListSelector = allMenuLine.find("li");
   currentList = [];
 
@@ -147,7 +147,7 @@
     $(window).scroll(function (event) {
       var LimiteTop = 200; // 200px
       var win = $(window);
-      var Top = $(win).scrollTop();
+      var Top = win.scrollTop();
       scrollStatus = (Top > LimiteTop) ? true : false;
       if (scrollStatus) {
         // $( '.goup' ).fadeIn('slow', function(){});

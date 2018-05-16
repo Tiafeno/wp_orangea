@@ -114,6 +114,7 @@ get_header();
   get_template_part('templates/content', 'activities');
   get_template_part('templates/content', 'restaurant');
   get_template_part('templates/content', 'galerie');
+  get_template_part('templates/content', 'contact');
 
   get_footer();
   ?>
