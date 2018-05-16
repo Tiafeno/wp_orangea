@@ -37,7 +37,7 @@ if ( ! empty( $galerie_page )) :
 				<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
 					<div class="__org_support uk-padding-large uk-margin-large-bottom">
 						<div class="uk-padding-large uk-padding-remove-left uk-padding-remove-vertical">
-							<h2 class="ui header __org_header_white">
+							<h2 class="ui header __org_header_white" id="<?= sanitize_title( $galerie->post_title ) ?>">
 								<?= $galerie->post_title ?>
 							</h2>
 							<aside class="uk-text-medium uk-width-1-1 uk-width-1-3@l __org_description">

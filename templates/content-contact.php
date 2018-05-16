@@ -104,25 +104,27 @@ if ( ! empty( $contact_page )) :
     <div class="__org_container uk-container uk-container-large uk-padding-remove-bottom">
       <div class="__org_support uk-padding-large" uk-grid>
 
-        <div class="uk-width-1-1">
+        <div class="uk-width-1-1" id="<?= sanitize_title($contact->post_title) ?>">
           <h2 id="contact" class="__org_header_white uk-flex"><?= $contact->post_title ?></h2>
         </div>
 
         <div class="uk-width-1-1">
           <aside class="__org_description">
-            <?= $contact->__org_desc ?>
+            <?= $contact->__org_subtitle ?>
           </aside>
 
-          <div class="uk-margin-auto uk-padding-small">
-            <button class="ui yellow button uk-display-block uk-margin-auto"
-            onclick="window.location.href = 'https://booking.ericsoft.com/BookingEngine/Book?idh=AEB9D8823D51317C&lang=fr&cur=EUR'">
-              <?= pll_e("Book") ?>
-            </button>
-          </div>
+          <?php if ( ! empty($contact->__org_book_link) || ! is_null($contact->__org_book_link) ) : ?>
+            <div class="uk-margin-auto uk-padding-small">
+              <button class="ui yellow button uk-display-block uk-margin-auto"
+              onclick="window.location.href = 'https://booking.ericsoft.com/BookingEngine/Book?idh=AEB9D8823D51317C&lang=fr&cur=EUR'">
+                <?= pll_e("Book") ?>
+              </button>
+            </div>
+          <?php endif; ?>
 
           <div class="uk-flex">
             <div class="contact-info uk-margin-auto uk-text-center">
-              <?= $contact->__org_info ?>
+              <?= apply_filters("the_content", $contact->__org_info) ?>
             </div>
           </div>
         </div>
@@ -136,10 +138,10 @@ if ( ! empty( $contact_page )) :
 
         <div class="uk-width-1-1">
           <div class="uk-width-1-6 uk-margin-auto">
-            <img src="img/SVG/tripadvisor.svg" class="uk-margin-auto uk-display-block" width="450"
+            <img src="<?= get_template_directory_uri() . '/img/SVG/tripadvisor.svg' ?>" class="uk-margin-auto uk-display-block" width="450"
                 style="cursor: pointer"
                 onclick="window.location.href = 'https://www.tripadvisor.fr/Hotel_Review-g479206-d1181580-Reviews-Orangea_Village-Nosy_Be_Antsiranana_Province.html'"
-                onerror="this.onerror=null; this.src='img/2x/tripadvisor@2x.png'" />
+                onerror="this.onerror=null; this.src='<?= get_template_directory_uri() . '/img/2x/tripadvisor@2x.png' ?>'" />
           </div>
         </div>
 

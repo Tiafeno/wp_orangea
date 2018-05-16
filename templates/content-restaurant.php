@@ -42,8 +42,10 @@ if ( ! empty( $restaurant_page )) :
 						     style="position:relative; width: 100%;">
 							<div class="uk-padding-large uk-padding-remove-left __org_support">
 
-								<div id="restaurant" class="">
-									<h2 class="__org_header_white ui header uk-margin-small-top" uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">
+								<div id="<?= sanitize_title($restaurant->post_title) ?>" class="">
+									<h2
+                      class="__org_header_white ui header uk-margin-small-top"
+                      uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">
 										<?= $restaurant->post_title ?>
 									</h2>
 									<p class="uk-margin-medium-top uk-margin-medium-bottom">

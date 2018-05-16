@@ -42,12 +42,11 @@ if ( ! empty($accommodation_page)):
 					<div class="uk-flex uk-width-1-2@m uk-width-1-1">
 						<div class="uk-margin-auto-vertical __org_bg_sensor">
 							<div class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-bottom  __org_support"
-							     id="hebergement"
+                   id="<?= sanitize_title($accommodation->post_title) ?>"
 							     uk-parallax="opacity: 0,1; y: -100, 0; viewport: 0.3">
 								<div class="container-content uk-padding-large uk-padding-remove-vertical">
 									<h2 class="__org_header_white ui header uk-margin-small-top"
-									    uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3"
-											id="<?= sanitize_title($accommodation->post_title) ?>">
+									    uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">
 										<?= $accommodation->post_title ?>
 									</h2>
 									<div class="uk-margin-medium-top uk-margin-medium-bottom">
