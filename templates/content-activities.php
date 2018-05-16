@@ -50,7 +50,7 @@ foreach (array_values($activities_page) as $index => $activitie) :
         <div class="__org_support uk-padding-large uk-margin-large-bottom" uk-grid>
           <div class="uk-width-1-2@m uk-width-1-1">
             <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-top">
-              <h2 id="<?= sanitize_title($activitie->__org_subtitle) ?>" class="ui header" uk-parallax="opacity: 0,1; x: -100, 0; viewport: 0.5">
+              <h2 id="<?= sanitize_title($activitie->post_title) ?>" class="ui header" uk-parallax="opacity: 0,1; x: -100, 0; viewport: 0.5">
                 <?= $activitie->__org_subtitle ?>
                 <div class="sub header uk-margin-small-top">
                   <?= $activitie->post_title ?>
