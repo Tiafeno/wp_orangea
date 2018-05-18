@@ -29,8 +29,35 @@ $galerie_page = Arrays::filter( $post_acf, function ( $value ) {
 if ( ! empty( $galerie_page ) ) :
 	list( $galerie ) = array_values( $galerie_page );
 	WP_orangea_services::embed_wpb_custom_css( $galerie->ID );
+	if ( ! empty($galerie->__bg) ) {
+	  $background = new stdClass();
+	  switch ($galerie->__bg):
+      case 'color':
+        $background->color = $galerie->__org_bg_color;
+        break;
+      case 'image':
+        $background->url = $galerie->__org_bg_img[ 'url' ];
+        $background->color = $galerie->__org_bg_color;
+        break;
+      endswitch;
+  }
+  $backgroundPosition = explode('_', $galerie->__org_bg_pos);
 	?>
-  
+
+  <style type="text/css">
+    <?php if ( ! empty($galerie->__bg)): ?>
+      .org-6-section .__org-bg {
+        <?php if ($galerie->__bg == 'image'): ?>
+          background: <?= $background->color ?> url( <?= $background->url ?> ) no-repeat <?= implode(" ", $backgroundPosition) ?> !important;
+        <?php endif; ?>
+
+        <?php if ($galerie->__bg == 'color'): ?>
+          background: <?= $background->color ?> !important;
+        <?php endif; ?>
+      }
+    <?php endif; ?>
+  </style>
+
   <div class="org-6-section devider-background __org_parent">
     <div class="__org-bg __org_parallax">
       <!--<div class="__org_bg_top"></div>-->

@@ -34,10 +34,7 @@ $activities_page = Arrays::filter($post_acf, function ($value) {
 $activities_page = Arrays::sort($activities_page, function ($article) {
   return $article->__org_section_id;
 }, 'asc');
-?>
 
-
-<?php
 foreach (array_values($activities_page) as $index => $activitie) :
   $activity_menu = empty($activitie->__org_activity_menu) ? null : $activitie->__org_activity_menu;
   $class = ! empty($activitie->__org_section_class) ? $activitie->__org_section_class : "";

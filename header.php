@@ -147,11 +147,11 @@
          * @return string
          */
         function getBgImgElement (element) {
-          var bg_url = element.css('background-image');
+          var bgUrl = element.css('background-image');
           // ^ Either "none" or url("...urlhere..")
-          bg_url = /^url\((['"]?)(.*)\1\)$/.exec(bg_url);
-          bg_url = bg_url ? bg_url[2] : ""; // If matched, retrieve url, otherwise ""
-          return bg_url;
+          bgUrl = /^url\((['"]?)(.*)\1\)$/.exec(bgUrl);
+          bgUrl = bgUrl ? bgUrl[2] : ""; // If matched, retrieve url, otherwise ""
+          return bgUrl;
         }
 
         function addContainerpadding ( mesure ) {

@@ -116,6 +116,7 @@ add_action( 'wp_enqueue_scripts', function () {
 // Register string (polylang plugins)
 if (function_exists( "pll_register_string" )) :
 		pll_register_string(sitename, "MENU");
+		pll_register_string(sitename, "Book");
 	else:
 		exit("Function `pll_register_string` is not define, please active polylang plugins");
 endif;
