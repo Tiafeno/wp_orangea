@@ -38,7 +38,9 @@ add_action( 'init', function () {
 		),
 		'public'        => true,
 		'hierarchical'  => false,
-		'menu_position' => 100,
+		'menu_position' => null,
+		'show_ui'       => true,
+		'show_in_nav_menus' => true,
 		'menu_icon'     => 'dashicons-exerpt-view',
 		'supports'      => [ 'title', 'editor', 'thumbnail' ]
 	) );

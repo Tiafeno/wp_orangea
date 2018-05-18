@@ -102,7 +102,9 @@ if ( ! empty( $contact_page )) :
 <div class="org-nine-section __org_parent">
   <div class="__org-bg">
     <div class="__org_container uk-container uk-container-large uk-padding-remove-bottom">
-      <div class="__org_support uk-padding-large" uk-grid>
+      <div
+        class="__org_support uk-padding-large uk-padding-remove-bottom uk-margin-medium-bottom"
+        uk-grid>
 
         <div class="uk-width-1-1" id="<?= sanitize_title($contact->post_title) ?>">
           <h2 id="contact" class="__org_header_white uk-flex"><?= $contact->post_title ?></h2>
@@ -138,7 +140,8 @@ if ( ! empty( $contact_page )) :
 
         <div class="uk-width-1-1">
           <div class="uk-width-1-6 uk-margin-auto">
-            <img src="<?= get_template_directory_uri() . '/img/SVG/tripadvisor.svg' ?>" class="uk-margin-auto uk-display-block" width="450"
+            <img src="<?= get_template_directory_uri() . '/img/SVG/tripadvisor.svg' ?>"
+                 class="uk-margin-auto uk-display-block tripadvisor" width="80"
                 style="cursor: pointer"
                 onclick="window.location.href = 'https://www.tripadvisor.fr/Hotel_Review-g479206-d1181580-Reviews-Orangea_Village-Nosy_Be_Antsiranana_Province.html'"
                 onerror="this.onerror=null; this.src='<?= get_template_directory_uri() . '/img/2x/tripadvisor@2x.png' ?>'" />

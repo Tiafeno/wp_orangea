@@ -22,34 +22,36 @@
  */
 
 use Underscore\Types\Arrays;
-$galerie_page = Arrays::filter($post_acf, function ($value) {
+
+$galerie_page = Arrays::filter( $post_acf, function ( $value ) {
 	return $value->__org_type == "galerie";
-});
-if ( ! empty( $galerie_page )) :
-	list($galerie) = array_values( $galerie_page );
-	WP_orangea_services::embed_wpb_custom_css($galerie->ID);
-?>
-	<div class="org-6-section devider-background __org_parent">
-		<div class="__org-bg __org_parallax">
-			<!--<div class="__org_bg_top"></div>-->
-			<!--<div class="__org-container-shadow uk-position-absolute"></div>-->
-			<div class="__org-bg-shadow">
-				<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
-					<div class="__org_support uk-padding-large uk-margin-large-bottom">
-						<div class="uk-padding-large uk-padding-remove-left uk-padding-remove-vertical">
-							<h2 class="ui header __org_header_white" id="<?= sanitize_title( $galerie->post_title ) ?>">
+} );
+if ( ! empty( $galerie_page ) ) :
+	list( $galerie ) = array_values( $galerie_page );
+	WP_orangea_services::embed_wpb_custom_css( $galerie->ID );
+	?>
+  
+  <div class="org-6-section devider-background __org_parent">
+    <div class="__org-bg __org_parallax">
+      <!--<div class="__org_bg_top"></div>-->
+      <!--<div class="__org-container-shadow uk-position-absolute"></div>-->
+      <div class="__org-bg-shadow">
+        <div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
+          <div class="__org_support uk-padding-large uk-margin-large-bottom">
+            <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-vertical">
+              <h2 class="ui header __org_header_white" id="<?= sanitize_title( $galerie->post_title ) ?>">
 								<?= $galerie->post_title ?>
-							</h2>
-							<aside class="uk-text-medium uk-width-1-1 uk-width-1-3@l __org_description">
+              </h2>
+              <aside class="uk-text-medium uk-width-1-1 uk-width-1-3@l __org_description">
 								<?= $galerie->__org_subtitle ?>
-							</aside>
-							<div class="uk-margin-medium-top">
-								<?= apply_filters("the_content", $galerie->post_content); ?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+              </aside>
+              <div class="uk-margin-medium-top">
+								<?= the_content() ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <?php endif; ?>

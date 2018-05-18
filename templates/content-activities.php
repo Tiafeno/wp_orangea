@@ -87,7 +87,6 @@ foreach (array_values($activities_page) as $index => $activitie) :
                         <li ng-repeat="item in menuItems">
                           <a
                             ng-class="{active: item.ID === currentItem.ID}"
-                            href="#"
                             ng-mouseenter="eventOnEnterMenuLink($event, item.ID)">
                             {{ item.post_title }}
                           </a>

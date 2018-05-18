@@ -94,17 +94,17 @@ if ( ! empty($accommodation_page)):
 
 													if ( empty($subchilds)) :
 													if ($is_child) :  ?>
-													<div class="uk-width-1-1 uk-width-1-2@s uk-float-left __org_tab_card">
+													<div class="uk-width-1-2 uk-width-1-2@s uk-float-left __org_tab_card">
 														<ul class="uk-padding-remove uk-margin-remove-bottom">
 															<?php endif;
 
-															echo '<li><a href="#">'. $current_child->post_title .'</a></li>';
+															echo '<li><a>'. $current_child->post_title .'</a></li>';
 
 															$is_child = false;
 															continue;
 															endif;
 															?>
-															<div class="uk-width-1-1 uk-width-1-2@s uk-float-left __org_tab_card">
+															<div class="uk-width-1-2 uk-width-1-2@s uk-float-left __org_tab_card">
 																<?php if ( ! is_null($subchilds)) :?>
 																	<h5 class="ui header uk-margin-remove-vertical"><?= $child->post_title ?></h5>
 																<?php endif; ?>
@@ -113,17 +113,17 @@ if ( ! empty($accommodation_page)):
 
 																	<?php if (is_array($subchilds)) : ?>
 																		<?php foreach ($subchilds as $subchild) : ?>
-																			<li><a href="#"><?= $subchild->post_title ?></a></li>
+																			<li><a><?= $subchild->post_title ?></a></li>
 																		<?php endforeach; ?>
 																	<?php else: ?>
-																		<li><a href=""><?= $current_child->post_title ?></a> </li>
+																		<li><a><?= $current_child->post_title ?></a> </li>
 																	<?php endif; ?>
 
 																</ul>
 															</div>
 															<?php } ?> <!-- .end foreach #childs -->
 															<?php if ( ! $is_child) : ?> </div> <?php endif; ?>
-													<div class="uk-width-1-1 uk-width-1-2@s uk-float-left">
+													<div class="uk-width-1-2 uk-width-1-2@s uk-float-left">
 														<?php
 														$sidebar = sanitize_title(trim($parent->attr_title));
 														if ( is_active_sidebar( $sidebar ) ) :

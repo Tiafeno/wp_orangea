@@ -50,7 +50,8 @@ class OG_offcanvas_Walker extends Walker_Nav_Menu {
 	);
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$output .= sprintf( "\n<li> <a href='%s'> %s </a> \n",
-			$item->url, strtoupper($item->title));
+		$post = get_post($item->object_id);
+		$output .= sprintf( "\n<li> <a class='anchorage' href='#%s'> %s </a> \n",
+			$post->post_name, strtoupper($item->title));
 	}
 }

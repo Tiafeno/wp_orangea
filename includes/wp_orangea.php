@@ -60,10 +60,12 @@ class WP_Orangea {
 	 * @return array
 	 */
 	public function get_published_sections () {
+		$localLang = pll_current_language();
 		$args = [
 			'post_type' => _OG_POSTTYPE_,
 			'post_status' => 'publish',
-			'posts_per_page' => -1
+			'posts_per_page' => -1,
+			'lang' => $localLang
 		];
 		$quered = new WP_Query( $args );
 		wp_reset_query();

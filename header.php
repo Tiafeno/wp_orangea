@@ -126,7 +126,7 @@
         
         /**
          * Get object image width and height value
-         * @param url String, Image url
+         * @param url String
          * @return Promise
          */
         function getImageData (url = null) {
@@ -212,7 +212,7 @@
         // Set the minimum height of Tab Card automatically @hebergement
         function setMinHeight () {
           var tabCards = jQ('.__org_tab_card');
-          var heights = [120]; // Added default value
+          var heights = [140]; // Added default value
           var maxHeightValue = null;
 
           // Get max value
@@ -328,15 +328,18 @@
     img.pointer {
       cursor: pointer;
     }
+    img.tripadvisor {
+
+    }
   </style>
 </head>
 
 <body <?php body_class(); ?> >
   <!-- Chevron, pour aller vers le haut  -->
-  <span class="goup uk-margin-small-right uk-position-fixed uk-position-bottom-right uk-button uk-button-danger"
+  <span class="goup uk-margin-small-left uk-position-fixed uk-position-bottom-left uk-button uk-button-danger"
         uk-icon="icon: chevron-up; ratio: 2"
         style="padding: 0px 5px 0px 5px; z-index: 999; bottom: 80px"
-        title="Vers le haut" uk-tooltip="pos: left">
+        title="Vers le haut" uk-tooltip="pos: right">
   </span>
 
   <div class="uk-offcanvas-content">
