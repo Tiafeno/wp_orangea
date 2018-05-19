@@ -21,7 +21,7 @@ $section_posts = $instanceOrangea->get_published_sections();
 
 // Return posts with acf fields
 $post_acf = WP_Orangea::get_acf_params( $section_posts );
-if (false === $post_acf) exit('Plugin polylang issue, probably isn\'t activate or installed');
+if (false === $post_acf) exit('<h2>Contenue indisponible pour le moment.</h2>');
 
 // Variable global query templates
 set_query_var('post_acf', $post_acf);

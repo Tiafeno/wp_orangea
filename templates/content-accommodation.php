@@ -74,7 +74,7 @@ if ( ! empty($accommodation_page)):
 								</div>
 
 								<div class="container-footer">
-									<div class="uk-padding-large uk-padding-remove-vertical">
+									<div class="uk-padding-large uk-padding-remove-top">
 										<?php foreach ($parents as $key => $parent) :
 											$first_class = $key == 0 ? "uk-padding-remove-top active" : " ";
 											$find_parent = &$parent;
