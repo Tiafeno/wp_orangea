@@ -21,6 +21,7 @@
  *
  */
 use Underscore\Types\Arrays;
+global $og_global_args;
 
 $about_page = Arrays::filter($post_acf, function ($about) {
 	return $about->__org_type == "about";
@@ -28,37 +29,8 @@ $about_page = Arrays::filter($post_acf, function ($about) {
 
 if ( ! empty($about_page)):
 	list($about) = array_values($about_page);
-	?>
-	<div class="org-1-section __org_parent">
-		<div class="__org-bg">
-			<div class="__org_bg_top"></div>
-			<div class="uk-container uk-container-large  __org_container uk-flex">
-				<div class="uk-padding-large uk-padding-remove-vertical uk-flex">
-					<div class="uk-grid og-padding-medium uk-padding-remove-horizontal uk-margin-auto-vertical">
-						<div class="uk-width-1-2@m uk-width-1-1 uk-flex">
-							<div id="<?= sanitize_title($about->post_title) ?>">
-								<div class="uk-flex" style="height: 100%">
-									<img src="<?= get_template_directory_uri() . '/img/SVG/orangea-hotels.svg' ?>"
-									     onerror="this.onerror=null; this.src='<?= get_template_directory_uri() . '/img/2x/orangea-hotels@2x.png' ?>'"
-									     class="uk-logo"
-									     width="420"/>
-								</div>
-							</div>
-						</div>
-						<div class="uk-width-1-2@m uk-width-1-1 uk-flex">
-							<div class="uk-margin-auto-vertical">
-
-								<div class="uk-margin-medium-top">
-									<?= apply_filters("the_content", $about->post_content) ?>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div class="__org_bg_bottom"></div>
-		</div>
-	</div>
-<?php endif; ?>
+	$globalParams = [
+		'section' => $about
+	];
+  og_get_view_content('about', $globalParams);
+endif;

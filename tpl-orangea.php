@@ -109,12 +109,12 @@ get_header();
 	<!-- .end s@ -->
 <?php
 
-  get_template_part('templates/content', 'about');
-  get_template_part('templates/content', 'accommodation');
-  get_template_part('templates/content', 'activities');
-  get_template_part('templates/content', 'restaurant');
-  get_template_part('templates/content', 'galerie');
-  get_template_part('templates/content', 'contact');
+  get_template_part('templates/controller', 'about');
+  get_template_part('templates/controller', 'accommodation');
+  get_template_part('templates/controller', 'activities');
+  get_template_part('templates/controller', 'restaurant');
+  get_template_part('templates/controller', 'galerie');
+  get_template_part('templates/controller', 'contact');
 
   get_footer();
   ?>

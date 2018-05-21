@@ -10,6 +10,8 @@ define('__site_key__', "6LdkSUkUAAAAAMqVJODAt7TpAMUX9LJVVnOlz9gX"); /** Google a
 define('sitename', 'orangea');
 define('_OG_POSTTYPE_', '__og_section');
 
+$og_global_args = [];
+
 // Class dependence for Orangea template
 require get_template_directory() . '/includes/wp_orangea.php';
 require get_template_directory() . '/includes/wp_orangea_services.php';
@@ -69,8 +71,6 @@ add_action( 'get_header', function () {
 
 add_action ( 'widgets_init', function () {
 
-	/** register sidebar */
-
 	// Element avec le fond orange
 	register_sidebar( array(
 		'name'          => 'Menu Area',
@@ -112,6 +112,16 @@ add_action( 'wp_enqueue_scripts', function () {
 	//wp_enqueue_style( 'orangea-style', get_stylesheet_uri() );
 });
 
+/**
+ * @param $name String
+ */
+function og_get_view_content ($name, $args) {
+	$located = get_template_directory() . '/templates/views/' . $name . 'View.php';
+	if (file_exists($located)) :
+		extract($args, EXTR_OVERWRITE);
+		include $located;
+	endif;
+}
 
 // Register string (polylang plugins)
 if (function_exists( "pll_register_string" )) :

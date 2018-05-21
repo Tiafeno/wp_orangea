@@ -36,6 +36,20 @@ class WP_orangea_services {
 		return $items;
 	}
 
+	/**
+	 * Permet d'enregistrer une variable dans une variable global definie $og_global_args
+	 * @param array $args
+	 * @return void
+	 */
+	public static function set_to_global_args ($args) {
+		global $og_global_args;
+		if (isset($og_global_args) && is_array($og_global_args)) :
+			foreach ($args as $name => $value) {
+				$og_global_args[$name] = $value;
+			}
+		endif;
+	}
+
 	public static function embed_wpb_custom_css ($post_id) {
 		$shortcodes_custom_css = get_post_meta( $post_id, '_wpb_shortcodes_custom_css', true );
 		if ( ! empty( $shortcodes_custom_css ) ) {

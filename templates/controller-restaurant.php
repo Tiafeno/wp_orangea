@@ -28,41 +28,8 @@ $restaurant_page = Arrays::filter($post_acf, function ($value) {
 if ( ! empty( $restaurant_page )) :
 	list($restaurant) = array_values( $restaurant_page );
   WP_orangea_services::embed_wpb_custom_css($restaurant->ID);
-?>
-	<div class="org-5-section __org_parent">
-		<div class="__org-bg ">
-			<div class="__org_bg_top"></div>
-
-			<div class="__org_container uk-container uk-container-large  __org_devider">
-				<!--<div class="__org_devider_bg"></div>-->
-				<div class="uk-padding-large uk-padding-remove-vertical" uk-grid>
-					<div class="uk-flex uk-width-1-2@m uk-width-1-1 ">
-
-						<div class="uk-margin-auto-vertical uk-padding-large uk-padding-remove-left uk-padding-remove-right"
-						     style="position:relative; width: 100%;">
-							<div class="uk-padding-large uk-padding-remove-left __org_support">
-
-								<div id="<?= sanitize_title($restaurant->post_title) ?>" class="">
-									<h2
-                      class="__org_header_white ui header uk-margin-small-top"
-                      uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">
-										<?= $restaurant->post_title ?>
-									</h2>
-									<p class="uk-margin-medium-top uk-margin-medium-bottom">
-										<?= apply_filters("the_content", $restaurant->post_content) ?>
-									</p>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-					<div class="uk-width-1-2@m uk-width-1-1 uk-visible@m">
-					</div>
-				</div>
-			</div>
-
-			<!--<div class="__org_bg_bottom"></div>-->
-		</div>
-	</div>
-<?php endif; ?>
+  $globalParams = [
+    'section' => $restaurant
+  ];
+  og_get_view_content('restaurant', $globalParams);
+endif;
