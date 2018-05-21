@@ -21,14 +21,14 @@
  *
  */
 use Underscore\Types\Arrays;
-global $og_global_args;
 
-$about_page = Arrays::filter($post_acf, function ($about) {
-	return $about->__org_type == "about";
-});
+if (isset($post_acf))
+	$section = Arrays::filter($post_acf, function ($about) {
+		return $about->__org_type == "about";
+	});
 
-if ( ! empty($about_page)):
-	list($about) = array_values($about_page);
+if ( ! empty($section)):
+	list($about) = array_values($section);
 	$globalParams = [
 		'section' => $about
 	];

@@ -22,11 +22,14 @@
  */
 
 use Underscore\Types\Arrays;
-$contact_page = Arrays::filter($post_acf, function ($value) {
-	return $value->__org_type == "contact";
-});
-if ( ! empty( $contact_page )) :
-	list($contact) = array_values( $contact_page );
+
+if (isset($post_acf))
+	$section = Arrays::filter($post_acf, function ($value) {
+		return $value->__org_type == "contact";
+	});
+
+if ( ! empty( $section )) :
+	list($contact) = array_values( $section );
 	WP_orangea_services::embed_wpb_custom_css($contact->ID);
 	$globalParams = [
 	  'section' => $contact

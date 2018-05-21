@@ -26,8 +26,27 @@ class WP_Orangea {
 	}
 
 	/**
+	 * Ajouter les posts meta ACF dans la variable post
+	 * @param WP_POST $post
+	 * @return mixed
+	 */
+	private static function add_post_fields (&$post) {
+		$post->__org_subtitle = get_field('__org_subtitle', $post->ID);
+		$post->__org_type = get_field('__org_type', $post->ID);
+		$post->__org_desc = get_field('__org_desc', $post->ID);
+		$post->__org_reservation_link = get_field('__org_reservation_link', $post->ID);
+		$post->__org_info = get_field('__org_info', $post->ID);
+		$post->__org_activity_img = get_field('__org_activity_img', $post->ID);
+
+		$post->__bg = get_field('__bg', $post->ID);
+		$post->__org_bg_color = get_field('__org_bg_color', $post->ID);
+		$post->__org_bg_img = get_field('__org_bg_img', $post->ID);
+		$post->__org_bg_pos = get_field('__org_bg_pos', $post->ID);
+
+		return $post;
+	}
+	/**
 	 * @param array $posts
-	 *
 	 * @return array|bool
 	 */
 	public static function get_acf_params ($posts) {
@@ -35,24 +54,23 @@ class WP_Orangea {
 		$posts_acf = [];
 		if (is_array( $posts ) && ! empty($posts)) {
 			foreach ($posts as $post):
-				$post->__org_subtitle = get_field('__org_subtitle', $post->ID);
-				$post->__org_type = get_field('__org_type', $post->ID);
-				$post->__org_desc = get_field('__org_desc', $post->ID);
-				$post->__org_reservation_link = get_field('__org_reservation_link', $post->ID);
-				$post->__org_info = get_field('__org_info', $post->ID);
-				$post->__org_activity_img = get_field('__org_activity_img', $post->ID);
-
-				$post->__bg = get_field('__bg', $post->ID);
-				$post->__org_bg_color = get_field('__org_bg_color', $post->ID);
-				$post->__org_bg_img = get_field('__org_bg_img', $post->ID);
-				$post->__org_bg_pos = get_field('__org_bg_pos', $post->ID);
-
+				self::add_post_fields( $post );
 				array_push( $posts_acf, $post );
 			endforeach;
 
 			return $posts_acf;
 		} else
 			return false;
+	}
+
+	public static function get_acf_params_postid (&$post_acf, $post_id) {
+		if ( ! function_exists('get_field')) return false;
+		if (is_int($post_id)) {
+			$post = get_post($post_id);
+			self::add_post_fields( $post );
+			$post_acf = $post;
+		}
+		return null;
 	}
 
 	/**

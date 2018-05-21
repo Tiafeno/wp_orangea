@@ -64,7 +64,7 @@
 	<div class="__org-bg">
 		<div class="__org_container uk-container uk-container-large uk-padding-remove-bottom">
 			<div
-				class="__org_support uk-padding-large uk-padding-remove-bottom uk-margin-medium-bottom"
+				class="__org_support uk-padding-large uk-padding-remove-bottom uk-margin-medium-bottom uk-display-block"
 				uk-grid>
 
 				<div class="uk-width-1-1" id="<?= sanitize_title($section->post_title) ?>">

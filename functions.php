@@ -23,7 +23,6 @@ $instanceOrangea = new WP_Orangea();
 $instanceOrangeaServices = new WP_orangea_services();
 
 add_action( 'init', function () {
-
 	// Creer une nouvelle post 'section'
 	register_post_type( _OG_POSTTYPE_, array(
 		'label'         => _x( "Section", 'General name for "Ad" post type' ),
@@ -42,9 +41,10 @@ add_action( 'init', function () {
 		'hierarchical'  => false,
 		'menu_position' => null,
 		'show_ui'       => true,
-		'show_in_nav_menus' => true,
+		'rewrite'            => array( 'slug' => 'section' ),
+		'capability_type'    => 'post',
 		'menu_icon'     => 'dashicons-exerpt-view',
-		'supports'      => [ 'title', 'editor', 'thumbnail' ]
+		'supports'      => [ 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ]
 	) );
 });
 
@@ -91,8 +91,11 @@ add_action ( 'widgets_init', function () {
 });
 
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_script( 'lodash', get_template_directory_uri() . '/libs/lodash.min.js', array() );
-	wp_enqueue_script( 'bluebird', get_template_directory_uri() . '/libs/bluebird.min.js', array() );
+	// wp_deregister_script('underscore');
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('underscore');
+	//wp_enqueue_script( 'lodash', get_template_directory_uri() . '/libs/lodash.min.js', array() );
+	wp_enqueue_script( 'bluebird', get_template_directory_uri() . '/libs/bluebird.js', array() );
 	wp_enqueue_script( 'angularjs', get_template_directory_uri() . '/libs/angularjs/angular.js', array() );
 	wp_enqueue_script( 'angularjs-sanitize', '//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js', array("angularjs") );
 
@@ -111,6 +114,7 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	//wp_enqueue_style( 'orangea-style', get_stylesheet_uri() );
 });
+
 
 /**
  * @param $name String

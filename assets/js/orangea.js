@@ -36,8 +36,9 @@
     var windowHeight;
 
     // Positionner la ligne sous le menu
-    function positionLine ( positionIndex ) {
-      return new Promise(function (resolve) {
+    function positionLines ( positionIndex ) {
+      return new Promise(function (resolve, reject) {
+        if ( ! _.isNumber(positionIndex)) reject(false);
         var listIndex = positionIndex;
         var currentListWidth = currentList.eq( positionIndex ).width();
         var translationContainer = [];
@@ -46,11 +47,11 @@
         }
         lineMenu.css({
           width: (currentListWidth / 4) + "px",
-          transform: "translate(" + _.sumBy(translationContainer) + "px)",
+          transform: "translate(" + _.reduce(translationContainer, function(memo, num) { return memo + num; }, 0) + "px)",
           transition: "all .4s ease-in-out"
         });
 
-        /** set current element data true */
+        /** Set current element data true */
         resolve(true);
       });
 
@@ -65,7 +66,7 @@
         if (lstData) {
           currentList = menuLists;
           lineMenu = $( menuElement ).find( ".line" );
-          positionLine( i );
+          positionLines( i );
         }
 
         $( el )
@@ -76,7 +77,7 @@
             currentList = _.forEach( currentList, function (el) {
               $( el ).data('current', false);
             });
-            positionLine( indexElement )
+            positionLines( indexElement )
               .then(function ( response ) {
                 currentList.eq( indexElement ).data("current", true);
               })
@@ -85,7 +86,7 @@
             var indexElement = i;
             currentList = menuLists;
             lineMenu = $( menuElement ).find( ".line" );
-            positionLine( indexElement );
+            positionLines( indexElement );
           })
           .mouseleave(function () {
             var elWidth = 0;
@@ -100,7 +101,7 @@
               }
               lineMenu.css({
                 width: (elWidth/4) + "px",
-                transform: "translate(" + _.sumBy(widthLists) + "px)"
+                transform: "translate(" + _.reduce(widthLists, function(memo, num) { return memo + num; }, 0) + "px)"
               });
             }); // .end each loop
 

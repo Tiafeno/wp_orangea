@@ -51,7 +51,7 @@
 							<?= $section->__org_subtitle ?>
 						</aside>
 						<div class="uk-margin-medium-top">
-							<?= apply_filters("the_content", $section->post_content) ?>
+							<?php echo apply_filters("the_content", $section->post_content) ?>
 						</div>
 					</div>
 				</div>

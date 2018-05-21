@@ -22,11 +22,14 @@
  */
 
 use Underscore\Types\Arrays;
-$restaurant_page = Arrays::filter($post_acf, function ($value) {
-	return $value->__org_type == "restaurant";
-});
-if ( ! empty( $restaurant_page )) :
-	list($restaurant) = array_values( $restaurant_page );
+
+if (isset($post_acf))
+	$section = Arrays::filter($post_acf, function ($value) {
+		return $value->__org_type == "restaurant";
+	});
+
+if ( ! empty( $section )) :
+	list($restaurant) = array_values( $section );
   WP_orangea_services::embed_wpb_custom_css($restaurant->ID);
   $globalParams = [
     'section' => $restaurant

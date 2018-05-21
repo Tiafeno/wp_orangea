@@ -23,11 +23,13 @@
 
 use Underscore\Types\Arrays;
 
-$galerie_page = Arrays::filter( $post_acf, function ( $value ) {
-	return $value->__org_type == "galerie";
-} );
-if ( ! empty( $galerie_page ) ) :
-	list( $galerie ) = array_values( $galerie_page );
+if (isset($post_acf))
+	$section = Arrays::filter( $post_acf, function ( $value ) {
+		return $value->__org_type == "galerie";
+	} );
+
+if ( ! empty( $section ) ) :
+	list( $galerie ) = array_values( $section );
 	WP_orangea_services::embed_wpb_custom_css( $galerie->ID );
 	if ( ! empty($galerie->__bg) ) {
 	  $background = new stdClass();

@@ -30,84 +30,9 @@ get_header();
 
 	<div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom">
 	<!-- s@ -->
-	<div class="org-section __org_parent">
-		<div>
-			<div>
-				<div class="uk-container uk-container-large __org_container menu-container">
-					<div class="uk-padding-large uk-padding-remove-bottom uk-padding-remove-top uk-margin-medium-top" uk-grid>
-						<div class="uk-width-1-4@m uk-width-1-2">
-							<div class="__org_logo">
-								<!-- logo -->
-								<a target="_parent" href="<?= home_url('/') ?>">
-									<img class="uk-logo" width="180" src="<?= get_template_directory_uri() . '/img/2x/logo@2x.png' ?>"/>
-								</a>
-								<!-- .end logo -->
-							</div>
-						</div>
-						<div class="uk-width-3-4@m uk-width-1-2">
-							<div class="uk-flex" style="height: 100%">
-								<!-- menu -->
-								<header id="header" class="__org_menu alt">
-
-									<div class="__top_menu">
-										<div class="__menu">
-											<ul class="uk-margin-remove __top_menu_container">
-												<?php foreach ($lang_menus as $menu): ?>
-													<li><a href="<?= $menu->home_url ?>"><?= strtoupper( $menu->slug ) ?></a></li>
-												<?php endforeach; ?>
-											</ul>
-										</div>
-
-									</div>
-
-									<div class="__primary_menu uk-visible@m">
-										<?php
-										wp_nav_menu( array(
-											'menu_class'      => '__primary_menu_container __menu_line',
-											'container_class' => '__menu',
-											'theme_location'  => 'primary',
-											'walker' => new OG_Primary_Walker()
-										) );
-										?><!-- .primary_menu -->
-									</div>
-
-									<div class="__primary_menu_offcanvas uk-hidden@m">
-										<nav>
-											<a href="#menu" class="tiny ui right labeled orange icon button">
-												<i class="right bars icon"></i>
-												<?= pll_e("MENU") ?>
-											</a>
-										</nav>
-									</div>
-
-								</header>
-								<!-- Menu -->
-								<nav id="menu" class="__nav_offcanvas uk-hidden@m">
-									<div class="inner">
-										<h2><?= pll_e("MENU") ?></h2>
-										<?php
-										wp_nav_menu( array(
-											'menu_class'      => 'links',
-											'container_class' => '__menu',
-											'theme_location'  => 'primary',
-											'walker' => new OG_offcanvas_Walker()
-										) );
-										?><!-- .primary_offcanvas_menu -->
-
-										<a href="#" class="close">Close</a>
-									</div>
-								</nav>
-								<!-- .end menu -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="uk-container uk-container-large uk-flex">
-    <div class="uk-padding-large uk-padding-remove-vertical">
+    <div class="uk-padding-large uk-padding-remove-vertical entry-content">
       <?php
         while ( have_posts() ) : the_post();
           ?>

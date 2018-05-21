@@ -23,12 +23,13 @@
 use Underscore\Types\Arrays;
 global $og_global_args;
 
-$accommodation_page = Arrays::filter($post_acf, function ($value) {
-	return $value->__org_type == "accommodation";
-});
+if (isset($post_acf))
+	$section = Arrays::filter($post_acf, function ($value) {
+		return $value->__org_type == "accommodation";
+	});
 
-if ( ! empty($accommodation_page)):
-	list($accommodation) = array_values($accommodation_page);
+if ( ! empty($section)):
+	list($accommodation) = array_values($section);
 	$menu = WP_orangea_services::get_menu_items_by_location('hebergement');
 	$parents = Arrays::filter($menu, function ($value) {
 		return $value->menu_item_parent == 0 ;

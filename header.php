@@ -246,6 +246,11 @@
   </script>
 
   <style type="text/css">
+    .entry-content {
+      width: 100%;
+      display: block;
+      min-height: 100vh;
+    }
     /*  Section N°1  */
     .og-padding-medium {
       padding: 45px
