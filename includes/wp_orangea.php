@@ -78,6 +78,7 @@ class WP_Orangea {
 	 * @return array
 	 */
 	public function get_published_sections () {
+		$quered = [];
 		$localLang = pll_current_language();
 		$args = [
 			'post_type' => _OG_POSTTYPE_,
@@ -85,9 +86,15 @@ class WP_Orangea {
 			'posts_per_page' => -1,
 			'lang' => $localLang
 		];
-		$quered = new WP_Query( $args );
+		query_posts( $args );
+		if (have_posts()) {
+			while (have_posts()): the_post();
+				apply_filters('the_content', get_the_content());
+				array_push($quered, get_post(get_the_ID()));
+			endwhile;
+		}
 		wp_reset_query();
-		return $quered->posts;
+		return $quered;
 	}
 
 	public function get_menu_translations () {
