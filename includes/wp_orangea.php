@@ -27,49 +27,59 @@ class WP_Orangea {
 
 	/**
 	 * Ajouter les posts meta ACF dans la variable post
+	 *
 	 * @param WP_POST $post
+	 *
 	 * @return mixed
 	 */
-	private static function add_post_fields (&$post) {
-		$post->__org_subtitle = get_field('__org_subtitle', $post->ID);
-		$post->__org_type = get_field('__org_type', $post->ID);
-		$post->__org_desc = get_field('__org_desc', $post->ID);
-		$post->__org_reservation_link = get_field('__org_reservation_link', $post->ID);
-		$post->__org_info = get_field('__org_info', $post->ID);
-		$post->__org_activity_img = get_field('__org_activity_img', $post->ID);
+	private static function add_post_fields( &$post ) {
+		$post->__org_subtitle         = get_field( '__org_subtitle', $post->ID );
+		$post->__org_type             = get_field( '__org_type', $post->ID );
+		$post->__org_desc             = get_field( '__org_desc', $post->ID );
+		$post->__org_reservation_link = get_field( '__org_reservation_link', $post->ID );
+		$post->__org_info             = get_field( '__org_info', $post->ID );
+		$post->__org_activity_img     = get_field( '__org_activity_img', $post->ID );
 
-		$post->__bg = get_field('__bg', $post->ID);
-		$post->__org_bg_color = get_field('__org_bg_color', $post->ID);
-		$post->__org_bg_img = get_field('__org_bg_img', $post->ID);
-		$post->__org_bg_pos = get_field('__org_bg_pos', $post->ID);
+		$post->__bg           = get_field( '__bg', $post->ID );
+		$post->__org_bg_color = get_field( '__org_bg_color', $post->ID );
+		$post->__org_bg_img   = get_field( '__org_bg_img', $post->ID );
+		$post->__org_bg_pos   = get_field( '__org_bg_pos', $post->ID );
 
 		return $post;
 	}
+
 	/**
 	 * @param array $posts
+	 *
 	 * @return array|bool
 	 */
-	public static function get_acf_params ($posts) {
-		if ( ! function_exists('get_field')) return false;
+	public static function get_acf_params( $posts ) {
+		if ( ! function_exists( 'get_field' ) ) {
+			return false;
+		}
 		$posts_acf = [];
-		if (is_array( $posts ) && ! empty($posts)) {
-			foreach ($posts as $post):
+		if ( is_array( $posts ) && ! empty( $posts ) ) {
+			foreach ( $posts as $post ):
 				self::add_post_fields( $post );
 				array_push( $posts_acf, $post );
 			endforeach;
 
 			return $posts_acf;
-		} else
+		} else {
 			return false;
+		}
 	}
 
-	public static function get_acf_params_postid (&$post_acf, $post_id) {
-		if ( ! function_exists('get_field')) return false;
-		if (is_int($post_id)) {
-			$post = get_post($post_id);
+	public static function get_acf_params_postid( &$post_acf, $post_id ) {
+		if ( ! function_exists( 'get_field' ) ) {
+			return false;
+		}
+		if ( is_int( $post_id ) ) {
+			$post = get_post( $post_id );
 			self::add_post_fields( $post );
 			$post_acf = $post;
 		}
+
 		return null;
 	}
 
@@ -77,44 +87,55 @@ class WP_Orangea {
 	 * @desc Récuperer les post de type section
 	 * @return array
 	 */
-	public function get_published_sections () {
-		$quered = [];
+	public function get_published_sections() {
+		$quered    = [];
+
+		// Récuperer le code de la langue en acctuelle e.g: fr
 		$localLang = pll_current_language();
-		$args = [
-			'post_type' => _OG_POSTTYPE_,
-			'post_status' => 'publish',
-			'posts_per_page' => -1,
-			'lang' => $localLang
+		$args      = [
+			'post_type'      => _OG_POSTTYPE_,
+			'post_status'    => 'publish',
+			'posts_per_page' => - 1,
+			'lang'           => $localLang
 		];
 		query_posts( $args );
-		if (have_posts()) {
-			while (have_posts()): the_post();
-				apply_filters('the_content', get_the_content());
-				array_push($quered, get_post(get_the_ID()));
+		if ( have_posts() ) {
+			while ( have_posts() ): the_post();
+
+				// Il est important d'appliquer la filtre 'the_content'
+				// Pour executer les autres filtres qui s'accroche sur cette l'article
+				apply_filters( 'the_content', get_the_content() );
+
+				// Récuperer et enregistrer l'object WP_Post de cette article
+				array_push( $quered, get_post() );
 			endwhile;
 		}
 		wp_reset_query();
+
 		return $quered;
 	}
 
-	public function get_menu_translations () {
+	public function get_menu_translations() {
 		$Menu = [];
 
 		// Return false if function polylang isn't exist
-		if ( ! function_exists("PLL")) return false;
+		if ( ! function_exists( "PLL" ) ) {
+			return false;
+		}
 
-		$available_post_ids = PLL()->model->post->get_translations(get_the_ID());
-		$current_page_trad_id = pll_get_post(get_the_ID(), pll_current_language());
-		foreach ($available_post_ids as $key => $id) {
-			if ($id != $current_page_trad_id) {
+		$available_post_ids   = PLL()->model->post->get_translations( get_the_ID() );
+		$current_page_trad_id = pll_get_post( get_the_ID(), pll_current_language() );
+		foreach ( $available_post_ids as $key => $id ) {
+			if ( $id != $current_page_trad_id ) {
 				$available_lang = PLL()->model->get_languages_list();
-				foreach ( $available_lang as $lang) {
-					if ($key == $lang->slug) {
-						array_push($Menu, $lang);
+				foreach ( $available_lang as $lang ) {
+					if ( $key == $lang->slug ) {
+						array_push( $Menu, $lang );
 					}
 				}
 			}
 		}
+
 		return $Menu;
 	}
 }

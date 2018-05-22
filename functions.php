@@ -111,8 +111,6 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	wp_enqueue_script( 'orangea-script', get_template_directory_uri() . '/assets/js/orangea.js', array( 'jquery' ), 1, true );
 	wp_enqueue_script( 'menu', get_template_directory_uri() . '/assets/js/menu.js', array( 'jquery' ), 1, true );
-
-	//wp_enqueue_style( 'orangea-style', get_stylesheet_uri() );
 });
 
 
