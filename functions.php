@@ -91,10 +91,16 @@ add_action ( 'widgets_init', function () {
 });
 
 add_action( 'wp_enqueue_scripts', function () {
-	// wp_deregister_script('underscore');
-	wp_enqueue_script('jquery');
 	wp_enqueue_script('underscore');
-	//wp_enqueue_script( 'lodash', get_template_directory_uri() . '/libs/lodash.min.js', array() );
+	wp_enqueue_script('jquery');
+
+	// Qunit test unit
+	if (WP_DEBUG):
+		wp_enqueue_script( 'qunit', 'https://code.jquery.com/qunit/qunit-2.6.1.js', array(),'2.6.1', true );
+		wp_enqueue_style('qunit-style', 'https://code.jquery.com/qunit/qunit-2.6.1.css', array(), '2.6.1');
+	endif;
+
+	// wp_enqueue_script( 'lodash', get_template_directory_uri() . '/libs/lodash.min.js', array() );
 	wp_enqueue_script( 'bluebird', get_template_directory_uri() . '/libs/bluebird.js', array() );
 	wp_enqueue_script( 'angularjs', get_template_directory_uri() . '/libs/angularjs/angular.js', array() );
 	wp_enqueue_script( 'angularjs-sanitize', '//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js', array("angularjs") );
@@ -109,8 +115,16 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'sematic-modal', get_template_directory_uri() . '/libs/semantic/modal.min.js', array() );
 	wp_enqueue_script( 'sematic-tab', get_template_directory_uri() . '/libs/semantic/tab.min.js', array() );
 
-	wp_enqueue_script( 'orangea-script', get_template_directory_uri() . '/assets/js/orangea.js', array( 'jquery' ), 1, true );
-	wp_enqueue_script( 'menu', get_template_directory_uri() . '/assets/js/menu.js', array( 'jquery' ), 1, true );
+	wp_enqueue_script( 'orangea-script', get_template_directory_uri() . '/assets/js/orangea.js',
+		array( 'jquery' ), '1.0.1', true );
+
+	if (WP_DEBUG):
+		wp_enqueue_script('qunit-orangea-script', get_template_directory_uri() . '/assets/js/orangea-test.js',
+			array('qunit', 'orangea-script'), '1.0.0', true);
+	endif;
+
+	wp_enqueue_script( 'menu', get_template_directory_uri() . '/assets/js/menu.js',
+		array( 'jquery' ), 1, true );
 });
 
 

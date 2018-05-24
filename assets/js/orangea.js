@@ -55,7 +55,14 @@
         /** Set current element data true */
         resolve(true);
       });
+    }
 
+    if (QUnitTest) {
+      QUnit.test("Orangea script basics", async function( assert ) {
+        var requestPosition = await positionLines(2);
+        assert.equal(requestPosition, true, 'La requete sur la verification de position a étes effectuer avec success');
+        assert.ok( currentList, "currentList variable is'nt empty" );
+      });
     }
 
     $.each(allMenuLine, function (index, menuElement) {
@@ -187,9 +194,11 @@
       var _2_container = first_section.find(".__org_container");
       var newContainerHeight;
       newContainerHeight = Math.abs(windowHeight - Math.ceil(_2_container.height()));
-      _1_container.css({
+      var cssObj = {
         "min-height": newContainerHeight + "px"
-      });
+      };
+      _1_container.css(cssObj);
+      return cssObj;
     };
 
     /**
