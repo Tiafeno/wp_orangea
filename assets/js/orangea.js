@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2018. Tiafeno Finel
  *
@@ -28,26 +27,30 @@
     allMenuLine,
     currentList;
 
-  allMenuLine = $( ".__menu_line" );
+  allMenuLine = $(".__menu_line");
   allListSelector = allMenuLine.find("li");
   currentList = [];
 
-  $( document ).ready(function () {
+  $(document).ready(function () {
     var windowHeight;
 
     // Positionner la ligne sous le menu
-    function positionLines ( positionIndex ) {
+    function positionLines(positionIndex) {
       return new Promise(function (resolve, reject) {
-        if ( ! _.isNumber(positionIndex)) reject(false);
-        var listIndex = positionIndex;
-        var currentListWidth = currentList.eq( positionIndex ).width();
+        if (!_.isNumber(positionIndex)) reject(false);
+        var currentListWidth = currentList.eq(positionIndex).width();
+        var resistance = 0.5;
         var translationContainer = [];
-        for (var i = 0; i < listIndex; i++) {
-          translationContainer.push( currentList.eq(i).width() + 4 );
+        for (var i = 0; i < positionIndex; ++i) {
+          translationContainer.push(currentList.eq(i).width() + 4);
         }
+        // Effectuer une somme dans le contenue de cette tableau "translationContainer"
+        var xPos = _.reduce(translationContainer, function (memo, num) {
+          return memo + num;
+        }, 0);
         lineMenu.css({
           width: (currentListWidth / 4) + "px",
-          transform: "translate(" + _.reduce(translationContainer, function(memo, num) { return memo + num; }, 0) + "px)",
+          transform: "translate(" + (xPos - (resistance * positionIndex)) + "px)",
           transition: "all .4s ease-in-out"
         });
 
@@ -58,50 +61,52 @@
     }
 
     $.each(allMenuLine, function (index, menuElement) {
-      var menuLists = $( menuElement ).find("li");
+      var menuLists = $(menuElement).find("li");
       $.each(menuLists, function (i, el) {
 
         /** Positionner la ligne */
-        var lstData = $( el ).data( 'current' );
+        var lstData = $(el).data('current');
         if (lstData) {
           currentList = menuLists;
-          lineMenu = $( menuElement ).find( ".line" );
-          positionLines( i );
+          lineMenu = $(menuElement).find(".line");
+          positionLines(i);
         }
 
-        $( el )
+        $(el)
           .click(function () {
             var indexElement = i;
             currentList = menuLists;
-            lineMenu = $( menuElement ).find( ".line" );
-            currentList = _.forEach( currentList, function (el) {
-              $( el ).data('current', false);
+            lineMenu = $(menuElement).find(".line");
+            currentList = _.forEach(currentList, function (el) {
+              $(el).data('current', false);
             });
-            positionLines( indexElement )
-              .then(function ( response ) {
-                currentList.eq( indexElement ).data("current", true);
+            positionLines(indexElement)
+              .then(function (response) {
+                currentList.eq(indexElement).data("current", true);
               })
           })
           .mouseenter(function () {
             var indexElement = i;
             currentList = menuLists;
-            lineMenu = $( menuElement ).find( ".line" );
-            positionLines( indexElement );
+            lineMenu = $(menuElement).find(".line");
+            positionLines(indexElement);
           })
           .mouseleave(function () {
             var elWidth = 0;
             var widthLists = [];
             $.each(currentList, function ($i, $el) {
-              var hsCurrent = $( $el ).data( "current" );
+              var hsCurrent = $($el).data("current");
               if (hsCurrent) {
                 for (var j = 0; j < $i; j++) {
-                  widthLists.push( currentList.eq(j).width() + 4 );
+                  widthLists.push(currentList.eq(j).width() + 4);
                 }
-                elWidth = $( $el ).width();
+                elWidth = $($el).width();
               }
               lineMenu.css({
-                width: (elWidth/4) + "px",
-                transform: "translate(" + _.reduce(widthLists, function(memo, num) { return memo + num; }, 0) + "px)"
+                width: (elWidth / 4) + "px",
+                transform: "translate(" + _.reduce(widthLists, function (memo, num) {
+                  return memo + num;
+                }, 0) + "px)"
               });
             }); // .end each loop
 
@@ -109,33 +114,40 @@
       });
     });
 
-
-    $.each(allListSelector, function (index, el) {
-      $( el )
-        .find( "a.anchorage" )
+    /**
+     * Animer le scroll quand on clique sur le menu principal sur mobile ou sur desktop
+     * @type {*|HTMLElement}
+     */
+    var MenuLists = $("li");
+    $.each(MenuLists, function (index, el) {
+      $(el)
+        .find("a.anchorage")
         .on("click", function () {
-          var target = $( this ).attr( 'href' );
-          $( "html, body" ).stop().animate({
-            scrollTop: $( target ).offset().top - 20
+          var target = $(this).attr('href');
+          $("html, body").stop().animate({
+            scrollTop: $(target).offset().top - 20
           }, 2500, function () {
-            var goup = $( '.goup' );
+            var goup = $('.goup');
             goup.fadeIn('slow', function () {
             });
           });
         }); // .end onClick
 
       /**
-       * Menu line
+       * Ajouter une ligne d'animation sur l'objet definie
        */
       var line = $('.__menu_line').find('.line');
-      line.css({
-        height: "2px",
-        "margin-left": "10px"
-      });
+      if ( ! _.isEmpty(line))
+        line.css({
+          height: "2px",
+          "margin-left": "10px"
+        });
 
     }); // .end each loop
 
-    /** Scroll top */
+    /**
+     * Evenement quand on clique sur le boutton qui dirige vers le haut
+     */
     $('.goup')
       .hide()
       .on('click', function () {
@@ -145,13 +157,15 @@
         });
       });
 
-    $(window).scroll(function (event) {
+    /**
+     * On scroll event browser
+     */
+    $(window).scroll(function () {
       var LimiteTop = 200; // 200px
       var win = $(window);
       var Top = win.scrollTop();
       scrollStatus = (Top > LimiteTop) ? true : false;
       if (scrollStatus) {
-        // $( '.goup' ).fadeIn('slow', function(){});
         var goup = $('.goup');
         if (goup.is(":visible")) return false;
         goup.fadeIn('slow', function () {
@@ -162,9 +176,13 @@
       }
     });
 
+    /**
+     * Cette fonction permet de visualiser le 2em section (à propos)
+     * à l'ouverture du site.
+     */
     var updateSection = function () {
       var first_section = $(".org-1-section");
-      if (_.isEmpty( first_section )) return;
+      if (_.isEmpty(first_section)) return;
 
       windowHeight = $(window).innerHeight();
       var _1_container = $(".org-section").find(".__org_container");
@@ -175,12 +193,16 @@
         "min-height": newContainerHeight + "px"
       });
     };
+
+    /**
+     * Ajouter une devider background
+     */
     var updateDevider = function () {
       var parents = $(".__org_parent");
       var deviderWidth = parents.width();
       parents.each(function (index, el) {
         var devideBg = $(el).find(".__org_devider_bg");
-        if (devideBg.length == 0 ) return;
+        if (devideBg.length == 0) return;
         var mesure;
         mesure = (deviderWidth > 959) ? deviderWidth / 2 : deviderWidth;
         devideBg.css({
@@ -189,12 +211,14 @@
       });
     };
 
-    updateSection();
-    updateDevider();
-    $(window).resize(function () {
-
+    var __initResize__ = function () {
       updateSection();
       updateDevider();
+    };
+
+    __initResize__();
+    $(window).resize(function () {
+      __initResize__();
     });
   });
 

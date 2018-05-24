@@ -219,7 +219,6 @@
           jQ.each(tabCards, function (index, element) {
             var elHeight = jQ(element).innerHeight();
             heights.push( elHeight );
-            console.log(elHeight);
           });
           maxHeightValue = heights.reduce(function(a, b) {
             return Math.max(a, b);
