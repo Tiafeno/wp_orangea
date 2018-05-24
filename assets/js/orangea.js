@@ -23,12 +23,10 @@
 (function ($) {
   var
     lineMenu,
-    allListSelector,
     allMenuLine,
     currentList;
 
   allMenuLine = $(".__menu_line");
-  allListSelector = allMenuLine.find("li");
   currentList = [];
 
   $(document).ready(function () {
