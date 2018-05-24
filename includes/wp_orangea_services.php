@@ -50,6 +50,23 @@ class WP_orangea_services {
 		endif;
 	}
 
+	public static function get_post_bg_options ($post) {
+		$background = new stdClass();
+		if ( ! empty($post->__bg) ) {
+			switch ($post->__bg):
+				case 'color':
+					$background->color = $post->__org_bg_color;
+					break;
+				case 'image':
+					$background->url = $post->__org_bg_img[ 'url' ];
+					$background->color = $post->__org_bg_color;
+					break;
+			endswitch;
+		}
+		$background->position = explode('_', $post->__org_bg_pos);
+		return $background;
+	}
+
 	public static function embed_wpb_custom_css ($post_id) {
 		$shortcodes_custom_css = get_post_meta( $post_id, '_wpb_shortcodes_custom_css', true );
 		if ( ! empty( $shortcodes_custom_css ) ) {

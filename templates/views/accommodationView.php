@@ -1,8 +1,9 @@
 <?php
 use Underscore\Types\Arrays;
-
-// background section
 ?>
+<style type="text/css">
+  <?php do_action('orangea_section_bg', '.org-2-section', $section, $background); ?>
+</style>
 <div class="org-2-section __org_parent">
 	<div class="__org-bg __org_parallax">
 

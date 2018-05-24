@@ -31,22 +31,8 @@ if (isset($post_acf))
 if ( ! empty( $section ) ) :
 	list( $galerie ) = array_values( $section );
 	WP_orangea_services::embed_wpb_custom_css( $galerie->ID );
-	if ( ! empty($galerie->__bg) ) {
-	  $background = new stdClass();
-	  switch ($galerie->__bg):
-      case 'color':
-        $background->color = $galerie->__org_bg_color;
-        break;
-      case 'image':
-        $background->url = $galerie->__org_bg_img[ 'url' ];
-        $background->color = $galerie->__org_bg_color;
-        break;
-      endswitch;
-  }
-  $backgroundPosition = explode('_', $galerie->__org_bg_pos);
-	$background->position = $backgroundPosition;
   og_get_view_content('galerie', [
     'section' => $galerie,
-    'background' => $background
+    'background' => WP_orangea_services::get_post_bg_options($galerie)
   ]);
 endif;

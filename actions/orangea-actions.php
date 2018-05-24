@@ -24,11 +24,11 @@
 function action_section_bg ($class, $section, $background) {
 	if ( ! empty( $section->__bg ) ): ?>
 		<?= $class ?> .__org-bg {
-		<?php if ( $section->__bg == 'image' ): ?>
+		<?php if ( $section->__bg == 'image' && ! empty($background->url) ): ?>
 			background: <?= $background->color ?> url( <?= $background->url ?> ) no-repeat <?= implode( " ", $background->position ) ?> !important;
 		<?php endif; ?>
 
-		<?php if ( $section->__bg == 'color' ): ?>
+		<?php if ( $section->__bg == 'color' && ! empty($background->color) ): ?>
 			background: <?= $background->color ?> !important;
 		<?php endif; ?>
 		}

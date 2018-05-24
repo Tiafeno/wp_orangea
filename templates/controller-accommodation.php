@@ -37,6 +37,7 @@ if ( ! empty($section)):
 	$parents = array_values($parents);
 	$globalParams = [
 	  'section' => $accommodation,
+	  'background' => WP_orangea_services::get_post_bg_options($accommodation),
     'parents' => $parents,
     'menu' => $menu
   ];
