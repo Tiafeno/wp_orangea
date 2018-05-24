@@ -1,5 +1,7 @@
 <?php
 use Underscore\Types\Arrays;
+
+// background section
 ?>
 <div class="org-2-section __org_parent">
 	<div class="__org-bg __org_parallax">

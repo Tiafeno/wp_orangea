@@ -44,9 +44,9 @@ if ( ! empty( $section ) ) :
       endswitch;
   }
   $backgroundPosition = explode('_', $galerie->__org_bg_pos);
+	$background->position = $backgroundPosition;
   og_get_view_content('galerie', [
     'section' => $galerie,
-    'background' => $background,
-    'backgroundPosition' => $backgroundPosition
+    'background' => $background
   ]);
 endif;

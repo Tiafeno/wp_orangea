@@ -28,10 +28,8 @@
 
   allMenuLine = $(".__menu_line");
   currentList = [];
-
   $(document).ready(function () {
     var windowHeight;
-
     // Positionner la ligne sous le menu
     function positionLines(positionIndex) {
       return new Promise(function (resolve, reject) {
@@ -51,7 +49,6 @@
           transform: "translate(" + (xPos - (resistance * positionIndex)) + "px)",
           transition: "all .4s ease-in-out"
         });
-
         /** Set current element data true */
         resolve(true);
       });
@@ -68,7 +65,6 @@
     $.each(allMenuLine, function (index, menuElement) {
       var menuLists = $(menuElement).find("li");
       $.each(menuLists, function (i, el) {
-
         /** Positionner la ligne */
         var lstData = $(el).data('current');
         if (lstData) {
@@ -188,7 +184,6 @@
     var updateSection = function () {
       var first_section = $(".org-1-section");
       if (_.isEmpty(first_section)) return;
-
       windowHeight = $(window).innerHeight();
       var _1_container = $(".org-section").find(".__org_container");
       var _2_container = first_section.find(".__org_container");

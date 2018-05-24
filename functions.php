@@ -13,6 +13,7 @@ define('_OG_POSTTYPE_', '__og_section');
 $og_global_args = [];
 
 // Class dependence for Orangea template
+require get_template_directory() . '/actions/orangea-actions.php';
 require get_template_directory() . '/includes/wp_orangea.php';
 require get_template_directory() . '/includes/wp_orangea_services.php';
 require get_template_directory() . '/includes/wp_orangea_menu_walker.php';
@@ -21,6 +22,9 @@ require get_template_directory() . '/composer/vendor/autoload.php';
 // Create class instance
 $instanceOrangea = new WP_Orangea();
 $instanceOrangeaServices = new WP_orangea_services();
+
+//
+add_action('orangea_section_bg', 'action_section_bg', 10, 3);
 
 add_action( 'init', function () {
 	// Creer une nouvelle post 'section'
