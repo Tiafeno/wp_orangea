@@ -21,8 +21,10 @@
 							</div>
 						</footer>
 					</div> <!-- .uk-section -->
+
 				</div> <!-- .primary-content -->
 			</div> <!-- #primary -->
+
 		</div> <!-- .uk-offcanvas-content -->
   <?php
     wp_footer();

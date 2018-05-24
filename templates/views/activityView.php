@@ -49,7 +49,7 @@
 										</ul>
 									</div>
 								</div>
-								<div>
+								<div style="min-height: 120px">
 									<p ng-bind-html="currentItem.post_content"></p>
 								</div>
 							</div>
