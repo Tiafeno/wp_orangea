@@ -175,7 +175,7 @@
     });
 
     /**
-     * Cette fonction permet de visualiser le 2em section (à propos)
+     * Cette fonction permet de visualiser la 2em section (à propos)
      * à l'ouverture du site.
      */
     var updateSection = function () {
