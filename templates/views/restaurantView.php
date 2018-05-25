@@ -21,6 +21,9 @@
  *
  */
 ?>
+<style type="text/css">
+  <?php do_action('orangea_section_bg', '.org-5-section', $section, $background); ?>
+</style>
 <div class="org-5-section __org_parent">
 	<div class="__org-bg ">
 		<div class="__org_bg_top"></div>

@@ -32,7 +32,8 @@ if ( ! empty( $section )) :
 	list($restaurant) = array_values( $section );
   WP_orangea_services::embed_wpb_custom_css($restaurant->ID);
   $globalParams = [
-    'section' => $restaurant
+    'section' => $restaurant,
+    'background' => WP_orangea_services::get_post_bg_options($restaurant)
   ];
   og_get_view_content('restaurant', $globalParams);
 endif;
