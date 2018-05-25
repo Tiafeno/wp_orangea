@@ -30,7 +30,6 @@ if (isset($post_acf))
 
 if ( ! empty( $section ) ) :
 	list( $galerie ) = array_values( $section );
-	WP_orangea_services::embed_wpb_custom_css( $galerie->ID );
   og_get_view_content('galerie', [
     'section' => $galerie,
     'background' => WP_orangea_services::get_post_bg_options($galerie)

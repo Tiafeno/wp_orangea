@@ -30,7 +30,6 @@ if (isset($post_acf))
 
 if ( ! empty( $section )) :
 	list($contact) = array_values( $section );
-	WP_orangea_services::embed_wpb_custom_css($contact->ID);
 	$globalParams = [
 	  'section' => $contact
   ];

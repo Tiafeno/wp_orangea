@@ -50,6 +50,11 @@ class WP_orangea_services {
 		endif;
 	}
 
+	/**
+	 * @param $post WP_Post
+	 * Récuperer les options ACF sur le fond
+	 * @return stdClass
+	 */
 	public static function get_post_bg_options ($post) {
 		$background = new stdClass();
 		if ( ! empty($post->__bg) ) {
@@ -65,16 +70,6 @@ class WP_orangea_services {
 		}
 		$background->position = explode('_', $post->__org_bg_pos);
 		return $background;
-	}
-
-	public static function embed_wpb_custom_css ($post_id) {
-		$shortcodes_custom_css = get_post_meta( $post_id, '_wpb_shortcodes_custom_css', true );
-		if ( ! empty( $shortcodes_custom_css ) ) {
-			$shortcodes_custom_css = strip_tags( $shortcodes_custom_css );
-			echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
-			echo $shortcodes_custom_css;
-			echo '</style>';
-		}
 	}
 
 }
