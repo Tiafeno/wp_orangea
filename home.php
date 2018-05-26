@@ -13,7 +13,7 @@
  * @since Orangea 1.0
  */
 if ( ! function_exists("PLL")) exit("Please active polylang plugins");
-global $instanceOrangea;
+global $instanceOrangea, $post;
 $lang_menus = $instanceOrangea->get_menu_translations();
 
 // Return posts natif
@@ -26,11 +26,16 @@ if (false === $post_acf) exit('<h2>Contenue indisponible pour le moment.</h2>');
 // Variable global query templates
 set_query_var('post_acf', $post_acf);
 
+// Home page ACF
+WP_Orangea::get_page_acf_params($post);
 get_header();
 ?>
 
 <div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom">
 	<!-- s@ -->
+  <style type="text/css">
+    <?php do_action('orangea_home_bg', '.org-section', $post); ?>
+  </style>
 	<div class="org-section __org_parent">
 		<div class="__org-bg __org_parallax">
 			<div class="__org-bg-shadow">

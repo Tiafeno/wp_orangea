@@ -25,6 +25,7 @@ $instanceOrangeaServices = new WP_orangea_services();
 
 //
 add_action('orangea_section_bg', 'action_section_bg', 10, 3);
+add_action('orangea_home_bg', 'action_home_bg', 10, 2);
 
 add_action( 'init', function () {
 	// Creer une nouvelle post 'section'

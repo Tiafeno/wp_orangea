@@ -70,6 +70,33 @@ class WP_Orangea {
 		}
 	}
 
+	/**
+	 * @param array $posts
+	 *
+	 * @return array|bool
+	 */
+	public static function get_page_acf_params( &$post ) {
+		if ( ! function_exists( 'get_field' ) ) {
+			return false;
+		}
+		if ( ! empty( $post ) ) {
+			$position = get_field( 'bg_position', $post->ID );
+			if ($position == 'custom') {
+				$position = get_field( 'bg_custom_position', $post->ID );
+			}
+			$post->background    = get_field( 'background', $post->ID );
+			$post->bg_color      = get_field( 'bg_color', $post->ID );
+			$post->bg_image      = get_field( 'bg_image', $post->ID );
+			$post->bg_position   = $position;
+			$post->bg_size       = get_field( 'bg_size', $post->ID );
+			$post->bg_attachment = get_field( 'bg_attachment', $post->ID );
+
+			return $post;
+		} else {
+			return false;
+		}
+	}
+
 	public static function get_acf_params_postid( &$post_acf, $post_id ) {
 		if ( ! function_exists( 'get_field' ) ) {
 			return false;
@@ -88,7 +115,7 @@ class WP_Orangea {
 	 * @return array
 	 */
 	public function get_published_sections() {
-		$quered    = [];
+		$quered = [];
 
 		// Récuperer le code de la langue en acctuelle e.g: fr
 		$localLang = pll_current_language();

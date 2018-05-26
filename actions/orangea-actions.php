@@ -23,13 +23,42 @@
 
 function action_section_bg ($class, $section, $background) {
 	if ( ! empty( $section->__bg ) ): ?>
-		<?= $class ?> .__org-bg {
-		<?php if ( $section->__bg == 'image' && ! empty($background->url) ): ?>
-			background: <?= $background->color ?> url( <?= $background->url ?> ) no-repeat <?= implode( " ", $background->position ) ?> !important;
+		<?= $class ?> > .__org-bg {
+		<?php if ( $section->__bg == 'image' && ! empty($background->url) ):
+			$color = empty($background->color) ? "#ffffff" : $background->color;
+			?>
+			background-image: url( <?= $background->url ?> ) !important;
+      background-position: <?= implode( " ", $background->position ) ?> !important;
+      background-color: <?= $color ?> !important;
+      background-size: <?= $background->size ?> !important;
+      background-repeat: no-repeat;
+      background-attachment: <?= $background->attachment ?> !important;
 		<?php endif; ?>
 
 		<?php if ( $section->__bg == 'color' && ! empty($background->color) ): ?>
 			background: <?= $background->color ?> !important;
+		<?php endif; ?>
+		}
+	<?php endif;
+}
+
+function action_home_bg ($class, $section) {
+	if ( ! empty( $section->background ) ): ?>
+		<?= $class ?> > .__org-bg {
+		<?php if ( $section->background == 'image' && ! empty($section->bg_image) ):
+			$color = empty($section->bg_color) ? "#ffffff" : $section->bg_color;
+		  $position = explode('_', $section->bg_position);
+			?>
+			background-image: url( <?= $section->bg_image['url'] ?> ) !important;
+      background-position: <?= implode( " ", $position ) ?> !important;
+      background-color: <?= $color ?> !important;
+      background-size: <?= $section->bg_size ?> !important;
+      background-repeat: no-repeat;
+      background-attachment: <?= $section->bg_attachment ?> !important;
+		<?php endif; ?>
+
+		<?php if ( $section->background == 'color' && ! empty($section->bg_color) ): ?>
+			background: <?= $section->color ?> !important;
 		<?php endif; ?>
 		}
 	<?php endif;
