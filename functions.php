@@ -137,10 +137,19 @@ add_action( 'wp_enqueue_scripts', function () {
  * @param $name String
  */
 function og_get_view_content ($name, $args) {
-	$located = get_template_directory() . '/templates/views/' . $name . 'View.php';
-	if (file_exists($located)) :
+  if (is_array($name)) {
+    $nameExtact = implode('-', $name);
+    $filename = $nameExtact
+  }
+
+  if (is_string($name))
+    $filename = $name
+
+  if ( ! isset($filename)) return false;
+  $fileLocation = get_template_directory() . '/templates/views/' . $filename . 'View.php';
+	if (file_exists($fileLocation)) :
 		extract($args, EXTR_OVERWRITE);
-		include $located;
+		include $fileLocation;
 	endif;
 }
 
