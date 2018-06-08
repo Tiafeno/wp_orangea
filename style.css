@@ -234,7 +234,7 @@ div.org-2-section .__org_bg_sensor {
     padding-top: 5em;
 }
 div.org-2-section .__org_support {
-    background-color: rgba(40, 37, 37);
+    background-color: rgb(40, 37, 37);
     border-radius: 25px;
 }
 @media screen and (max-width: 960px) {
@@ -252,6 +252,7 @@ div.org-2-section .__org_support {
 /* begin four  section */
 div#org-3-section > .__org-bg {
     background-image: url("img/three-bg.png");
+    background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 75%;
@@ -347,7 +348,9 @@ div.org-4-section .__menu li > a {
 
 /* begin six section */
 div.org-5-section > .__org-bg {
-    background: url("img/2x/restaurent-bg@2x.png") no-repeat left bottom;
+    background-image: url("img/2x/restaurent-bg@2x.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 

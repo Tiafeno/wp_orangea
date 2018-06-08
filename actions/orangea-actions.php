@@ -22,10 +22,10 @@
  */
 
 function action_section_bg ($class, $section, $background) {
-	if ( ! empty( $section->__bg ) ): ?>
+	if ( trim( $section->__bg ) != 'null' ): ?>
 		<?= $class ?> > .__org-bg {
 		<?php if ( $section->__bg == 'image' && ! empty($background->url) ):
-			$color = empty($background->color) ? "#ffffff" : $background->color;
+			$color = empty($background->color) ? "transparent" : $background->color;
 			?>
 			background-image: url( <?= $background->url ?> ) !important;
       background-position: <?= implode( " ", $background->position ) ?> !important;
@@ -43,10 +43,10 @@ function action_section_bg ($class, $section, $background) {
 }
 
 function action_home_bg ($class, $section) {
-	if ( ! empty( $section->background ) ): ?>
+	if ( ! empty( $section->background ) && trim($section->background) === "image" ): ?>
 		<?= $class ?> > .__org-bg {
 		<?php if ( $section->background == 'image' && ! empty($section->bg_image) ):
-			$color = empty($section->bg_color) ? "#ffffff" : $section->bg_color;
+			$color = empty($section->bg_color) ? "transparent" : $section->bg_color;
 		  $position = explode('_', $section->bg_position);
 			?>
 			background-image: url( <?= $section->bg_image['url'] ?> ) !important;

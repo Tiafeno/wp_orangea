@@ -144,7 +144,6 @@ class WP_Orangea {
 
 	public function get_menu_translations() {
 		$Menu = [];
-
 		// Return false if function polylang isn't exist
 		if ( ! function_exists( "PLL" ) ) {
 			return false;

@@ -321,7 +321,7 @@
 
     /* Section 5 et 6 */
     .org-5-section > .__org-bg {
-      z-index: 9;
+      z-index: 9 !important;
     }
 
     .org-6-section {
