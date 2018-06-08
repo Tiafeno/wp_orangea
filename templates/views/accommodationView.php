@@ -4,11 +4,15 @@ use Underscore\Types\Arrays;
 <style type="text/css">
   <?php do_action('orangea_section_bg', '.org-2-section', $section, $background); ?>
 </style>
-<div class="org-2-section __org_parent <?= $section->__org_section_class ?>">
-=======
-	<div class="__org-bg __org_parallax">
->>>>>>> 770f2ed9747bc21b5a7a58c88e44813ef5a9b44c
 
+<div class="org-2-section __org_parent <?= $section->__org_section_class ?>">
+  <script type="text/javascript">
+    (function ($) {
+      $(document).ready(function () {
+
+      });
+    })(jQuery);
+  </script>
 	<div class="__org-bg __org_parallax">
 		<div class="__org_container uk-container uk-container-large  __org_devider">
 			<!-- <div class="__org_devider_bg"></div> -->
