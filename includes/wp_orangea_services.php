@@ -64,6 +64,7 @@ class WP_orangea_services {
 					break;
 				case 'image':
 					$background->url = $post->__org_bg_img[ 'url' ];
+				case 'galleries':
 					$background->color = $post->__org_bg_color;
 					$background->attachment = $post->__org_bg_attachment;
 					$background->size = $post->__org_bg_size;

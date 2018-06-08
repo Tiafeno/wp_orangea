@@ -30,14 +30,17 @@ if (isset($post_acf))
 
 if ( ! empty($section)):
 	list($accommodation) = array_values($section);
+	// Récuperer la galleries
+	$galleries = get_field('__org_bg_galeries', $accommodation->ID);
 	$menu = WP_orangea_services::get_menu_items_by_location('hebergement');
 	$parents = Arrays::filter($menu, function ($value) {
-		return $value->menu_item_parent == 0 ;
+		return $value->menu_item_parent == 0;
 	});
 	$parents = array_values($parents);
 	$globalParams = [
 	  'section' => $accommodation,
 	  'background' => WP_orangea_services::get_post_bg_options($accommodation),
+		'galleries' => $galleries ? $galleries : null,
     'parents' => $parents,
     'menu' => $menu
   ];

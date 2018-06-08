@@ -1,5 +1,6 @@
 <?php
 use Underscore\Types\Arrays;
+// global $section, $parents, $background, $galleries;
 ?>
 <style type="text/css">
   <?php do_action('orangea_section_bg', '.org-2-section', $section, $background); ?>
@@ -7,9 +8,12 @@ use Underscore\Types\Arrays;
 
 <div class="org-2-section __org_parent <?= $section->__org_section_class ?>">
   <script type="text/javascript">
+    var galleries = <?= json_encode($galleries, JSON_PRETTY_PRINT) ?>;
     (function ($) {
       $(document).ready(function () {
-
+        if ( ! _.isNull(galleries)) {
+          bgChange($('.org-2-section').find('.__org-bg'), galleries, 2000);
+        }
       });
     })(jQuery);
   </script>

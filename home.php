@@ -31,7 +31,7 @@ WP_Orangea::get_page_acf_params($post);
 get_header();
 ?>
 
-<div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom">
+<div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom" ng-app="activityApp">
 	<!-- s@ -->
   <style type="text/css">
     <?php do_action('orangea_home_bg', '.org-section', $post); ?>

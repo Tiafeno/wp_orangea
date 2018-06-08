@@ -74,58 +74,63 @@
     <?php $QUnit = WP_DEBUG == false ? 0 : 1; ?>
     var QUnitTest = <?= $QUnit ?>;
 
-    (function (jQ) {
-      
-        /**
-         * Convert image url to base64
-         */
-        var toDataURL = function (post) {
-          return new Promise(function (resolve, reject) {
-            if (false == post.thumbnail_url) reject(false);
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-              var reader = new FileReader();
-              reader.onloadend = function () {
-                post.blob = reader.result;
-                resolve( post );
-              }
-              reader.readAsDataURL(xhr.response);
-            };
-            xhr.open('GET', post.thumbnail_url);
-            xhr.responseType = 'blob';
-            xhr.send();
-          });
-        }
-        
-        /**
-         * Change an element background image with define interval
-         * @param $selector {selector} jQuery
-         * @param $post {Array} of media post
-         */
-        var bgChange = function ($selector, $post) {
-          var postMediaBg = [];
-          if ($selector === '' || $selector === null) return;
-          var Element = is_string($selector) ? jQ($selector) : $selector;
-          if (Element.length > 0) {
-            jQ.each(Element, function (index, el) {
-              toDataURL
-                .then(function (response) {
-                  var postContent = response;
-                  postMediaBg.push(postContent);
-                })
-            });
-
-            window.setInterval( function () {
-              var posts = postMediaBg.concat();
-              var position = _.random(0, posts.length);
-              var post = posts[ position ];
-              Element.css({
-                'background-image': "url(" + post.blob + ")";
-              });
-            }, 2000);
-          }
+    /**
+     * Convert image url to base64
+     */
+    var toDataURL = function (post) {
+      return new Promise(function (resolve, reject) {
+        if (false === post.url || _.isNull(post.url) || _.isEmpty(post.url)) reject(false);
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          var reader = new FileReader();
+          reader.onloadend = function () {
+            post.blob = reader.result;
+            resolve( post );
+          };
+          reader.readAsDataURL(xhr.response);
         };
+        xhr.open('GET', post.url);
+        xhr.responseType = 'blob';
+        xhr.send();
+      });
+    };
 
+    /**
+     * Change an element background image with define interval
+     * @param $selector {selector} jQuery
+     * @param $posts {Array} of media post
+     * @param timeout {int} - 2000ms (default)
+     */
+    var bgChange = function ($selector, $posts, timeout = 2000) {
+      var postMediaBg = [];
+      if ($selector === '' || $selector === null) return;
+      var Element = _.isString($selector) ? jQuery($selector) : $selector;
+      if (Element.length > 0) {
+        _.each($posts, function (post) {
+          toDataURL( post )
+            .then(function (response) {
+              postMediaBg.push(response);
+            })
+        });
+        Element.css({
+          '-webkit-transition': 'background-image 1s ease-in-out',
+          '-moz-transition': 'background-image 1s ease-in-out',
+          '-o-transition': 'background-image 1s ease-in-out',
+          'transition': 'background-image 1s ease-in-out'
+        });
+        window.setInterval( function () {
+          var posts = postMediaBg.concat();
+          var position = _.random(0, posts.length - 1);
+          var post = posts[ position ];
+          if ( ! _.isUndefined(post.blob))
+            Element.css({
+              'background-image': "url(" + post.blob + ")"
+            });
+        }, timeout);
+      }
+    };
+
+    (function (jQ) {
       jQ(document).ready(function () {
         var bgTop = jQ('.__org_bg_top');
         var bgBottom = jQ('.__org_bg_bottom');
@@ -352,7 +357,7 @@
     }
 
     .container-footer ul > li a:hover {
-      color: #282525;
+      color: #F6AC62;
     }
 
     .container-footer ul > li a {
@@ -371,6 +376,10 @@
       top: -2px;
     }
 
+    .org-4-section .__org_support {
+      padding-bottom: 0;
+    }
+
     /* Section 5 et 6 */
     .org-5-section > .__org-bg {
       z-index: 9 !important;
@@ -380,8 +389,8 @@
       position: relative;
     }
 
-    .org-6-section > .__org-bg {
-      background: #ebe1df url(<?= esc_url( get_template_directory_uri() ); ?>/img/unsplash.jpg) no-repeat top left;
+    .org-6-section  .__org-bg {
+      /*background: #ebe1df url(<?= esc_url( get_template_directory_uri() ); ?>/img/unsplash.jpg) no-repeat top left; */
       background-attachment: fixed;
       background-size: cover;
       min-height: 50em;
@@ -392,13 +401,6 @@
       position: relative;
       z-index: 9;
       background: none;
-      /*background: -moz-linear-gradient(top, rgba(25,24,25,1) 0%, transparent 82%);
-			background: -webkit-linear-gradient(top, rgba(25,24,25,1) 0%, transparent 82%);
-			background: linear-gradient(to bottom, rgba(25,24,25,1) 0%, transparent 82%);*/
-    }
-
-    .org-6-section .__org_container {
-
     }
 
     .__org-bg .__org_description {
@@ -409,12 +411,18 @@
       line-height: 0.8 !important;
     }
 
+
     img.pointer {
       cursor: pointer;
     }
 
-    img.tripadvisor {
-
+    @keyframes shrink {
+      0% { transform: scale(0.6); }
+      100% { transform: scale(1); }
+    }
+    @keyframes Zoom {
+      0% { transform: scale(1.6); }
+      100% { transform: scale(1.8); }
     }
   </style>
 </head>

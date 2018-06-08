@@ -19,6 +19,8 @@ require get_template_directory() . '/includes/wp_orangea_services.php';
 require get_template_directory() . '/includes/wp_orangea_menu_walker.php';
 require get_template_directory() . '/composer/vendor/autoload.php';
 
+require_once get_template_directory() . '/includes/wp_acf_orangea.php';
+
 // Create class instance
 $instanceOrangea = new WP_Orangea();
 $instanceOrangeaServices = new WP_orangea_services();
@@ -27,6 +29,9 @@ $instanceOrangeaServices = new WP_orangea_services();
 add_action('orangea_section_bg', 'action_section_bg', 10, 3);
 add_action('orangea_home_bg', 'action_home_bg', 10, 2);
 add_action('orangea_enqueue_options_script', 'action_enqueue_option_scripts', 10, 1);
+
+add_action('wp_ajax_action_get_galerie', 'action_get_galerie');
+add_action('wp_ajax_nopriv_action_get_galerie', 'action_get_galerie');
 
 add_action( 'init', function () {
 	// Creer une nouvelle post 'section'
@@ -110,6 +115,12 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'bluebird', get_template_directory_uri() . '/libs/bluebird.js', array() );
 	wp_enqueue_script( 'angularjs', get_template_directory_uri() . '/libs/angularjs/angular.js', array() );
 	wp_enqueue_script( 'angularjs-sanitize', '//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js', array("angularjs") );
+	wp_enqueue_script( 'activity-galerie', get_template_directory_uri() . '/assets/js/activityGalerie.js', array("angularjs") );
+	wp_localize_script( 'activity-galerie', 'orangea', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ),
+		'templateUrl' => get_template_directory_uri() . '/assets/js/templates/',
+		'templateDir' => get_template_directory_uri()
+	));
 
 	wp_enqueue_script( 'jquery-adress', get_template_directory_uri() . '/libs/jquery/jquery.address.js', array( 'jquery' ) );
 

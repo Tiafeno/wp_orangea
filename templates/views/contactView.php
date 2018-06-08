@@ -24,6 +24,8 @@
 
 <style type="text/css">
   .org-nine-section {
+    position: relative;
+    z-index: 9;
   }
 
   .org-nine-section .__org-bg {
@@ -62,6 +64,22 @@
     display: block;
     margin-bottom: 10px;
   }
+  .contact-social {
+    padding-top: 10px;
+  }
+  .contact-social::before {
+    content: ' ';
+    height: 20px;
+    width: 3px;
+    margin: auto;
+    background: #615f60;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .contact-social .uk-icon-button {
+    border-radius: 5px !important;
+  }
 
 </style>
 
@@ -94,6 +112,14 @@
           <div class="uk-flex">
             <div class="contact-info uk-margin-auto uk-text-center">
 							<?= apply_filters( "the_content", $section->__org_info ) ?>
+            </div>
+          </div>
+
+          <div class="uk-flex">
+            <div class="contact-social uk-margin-auto">
+              <?php foreach ($socials as $social): ?>
+                <a href="<?= $social->url ?>" class="uk-icon-button uk-margin-small-right uk-margin-small-left" uk-icon="<?= $social->icon ?>"></a>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>

@@ -33,17 +33,33 @@ class WP_Orangea {
 	 * @return mixed
 	 */
 	private static function add_post_fields( &$post ) {
+		$styles = get_field('styles', $post->ID);
+
 		$post->__org_subtitle         = get_field( '__org_subtitle', $post->ID );
 		$post->__org_type             = get_field( '__org_type', $post->ID );
-		$post->__org_desc             = get_field( '__org_desc', $post->ID );
-		$post->__org_reservation_link = get_field( '__org_reservation_link', $post->ID );
-		$post->__org_info             = get_field( '__org_info', $post->ID );
-		$post->__org_activity_img     = get_field( '__org_activity_img', $post->ID );
+
+		// Elements
+		$elements = get_field('elements', $post->ID);
+		$post->__org_section_id = $elements['__org_section_id'];
+		$post->__org_section_class = $elements['__org_section_class'];
+		$post->__org_activity_menu = $elements['__org_activity_menu'];
+
+		$post->__org_desc          = get_field( '__org_desc', $post->ID );
+
+		// Booking & Contact
+		$booking = get_field('booking_&_contact', $post->ID);
+		$post->__org_reservation_link = $booking['__org_book_link'];
+		$post->__org_info             = $booking['__org_info'];
 
 		$post->__bg           = get_field( '__bg', $post->ID );
-		$post->__org_bg_color = get_field( '__org_bg_color', $post->ID );
 		$post->__org_bg_img   = get_field( '__org_bg_img', $post->ID );
-		$post->__org_bg_pos   = get_field( '__org_bg_pos', $post->ID );
+		$post->__org_bg_galeries   = get_field( '__org_bg_galeries', $post->ID );
+
+		// Styles group
+		$post->__org_bg_color = $styles['__org_bg_color'];
+		$post->__org_bg_pos   = $styles['__org_bg_pos'];
+		$post->__org_bg_size   = $styles['__org_bg_size'];
+		$post->__org_bg_attachment   = $styles['__org_bg_attachment'];
 
 		return $post;
 	}

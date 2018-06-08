@@ -42,11 +42,13 @@ if (is_array($section)):
 	  $activity_menu = empty($activitie->__org_activity_menu) ? null : $activitie->__org_activity_menu;
 	  $class = ! empty($activitie->__org_section_class) ? $activitie->__org_section_class : "";
 	  $identification = ! empty($activitie->__org_section_id) ? $activitie->__org_section_id : '';
+	  $galeries = get_field('__org_activity_galeries', $activitie->ID);
 	  og_get_view_content('activity',
 		  compact(
 	  	"activitie",
 		  "activity_menu",
 		  "identification",
+		  "galeries",
 		  "class",
 		  "index")
 	  );

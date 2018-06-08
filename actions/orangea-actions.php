@@ -22,24 +22,38 @@
  */
 
 function action_section_bg ($class, $section, $background) {
-	if ( trim( $section->__bg ) != 'null' ): ?>
+	if ( ! empty( $section->__bg ) ): ?>
 		<?= $class ?> > .__org-bg {
+
 		<?php if ( $section->__bg == 'image' && ! empty($background->url) ):
 			$color = empty($background->color) ? "transparent" : $background->color;
 			?>
 			background-image: url( <?= $background->url ?> ) !important;
-      background-position: <?= implode( " ", $background->position ) ?> !important;
       background-color: <?= $color ?> !important;
-      background-size: <?= $background->size ?> !important;
-      background-repeat: no-repeat;
-      background-attachment: <?= $background->attachment ?> !important;
 		<?php endif; ?>
 
-		<?php if ( $section->__bg == 'color' && ! empty($background->color) ): ?>
+    <?php if ($section->__bg != 'color'): ?>
+      background-position: <?= implode( " ", $background->position ) ?> !important;
+      background-repeat: no-repeat;
+      background-size: <?= $background->size ?> !important;
+      background-attachment: <?= $background->attachment ?> !important;
+    <?php endif; ?>
+
+		<?php if ( $section->__bg == 'color' ): ?>
 			background: <?= $background->color ?> !important;
 		<?php endif; ?>
 		}
 	<?php endif;
+}
+
+function action_get_galerie () {
+  $section_id = $_REQUEST['section_id'];
+  if ( ! empty($section_id)) {
+    $galeries = get_field('__org_activity_galeries', (int)$section_id);
+    wp_send_json($galeries);
+  } else {
+    wp_send_json(false);
+  }
 }
 
 function action_home_bg ($class, $section) {

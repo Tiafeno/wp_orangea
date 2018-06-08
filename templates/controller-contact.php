@@ -30,8 +30,16 @@ if (isset($post_acf))
 
 if ( ! empty( $section )) :
 	list($contact) = array_values( $section );
+	$social_media = get_field('reseaux_social', 'option');
+	$socials = [];
+	foreach ($social_media as $key => $social) {
+		if (empty($social_media[$key])) continue;
+		$content = ['url' => $social_media[$key], 'icon' => $key];
+		array_push($socials, (object)$content);
+	}
 	$globalParams = [
-	  'section' => $contact
+	  'section' => $contact,
+		'socials' => $socials
   ];
 	og_get_view_content('contact', $globalParams);
 endif;

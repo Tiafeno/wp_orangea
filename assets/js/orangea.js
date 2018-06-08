@@ -54,14 +54,6 @@
       });
     }
 
-    if (QUnitTest) {
-      QUnit.test("Orangea script basics", async function( assert ) {
-        var requestPosition = await positionLines(2);
-        assert.equal(requestPosition, true, 'La requete sur la verification de position a étes effectuer avec success');
-        assert.ok( currentList, "currentList variable is'nt empty" );
-      });
-    }
-
     $.each(allMenuLine, function (index, menuElement) {
       var menuLists = $(menuElement).find("li");
       $.each(menuLists, function (i, el) {
@@ -114,6 +106,15 @@
           });
       });
     });
+
+    if (QUnitTest) {
+      QUnit.test("Orangea script basics", async function( assert ) {
+        currentList = allMenuLine.eq(0).find('li');
+        var requestPosition = await positionLines(2);
+        assert.equal(requestPosition, true, 'La requete sur la verification de position a étes effectuer avec success');
+        assert.ok( currentList, "currentList variable is'nt empty" );
+      });
+    }
 
     /**
      * Animer le scroll quand on clique sur le menu principal sur mobile ou sur desktop

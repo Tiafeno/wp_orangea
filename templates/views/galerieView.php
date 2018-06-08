@@ -20,6 +20,9 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
+$localUrl = esc_url( get_template_directory_uri() ) . "/img/unsplash.jpg";
+$url = isset($background->url) ? $background->url : $localUrl
 ?>
 
 <style type="text/css">
@@ -27,9 +30,8 @@
 </style>
 
 <div class="org-6-section devider-background __org_parent">
-	<div class="__org-bg __org_parallax">
-		<!--<div class="__org_bg_top"></div>-->
-		<!--<div class="__org-container-shadow uk-position-absolute"></div>-->
+	<div class="__org-bg" >
+    <img src="<?= $url ?>" scale-animation>
 		<div class="__org-bg-shadow">
 			<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
 				<div class="__org_support uk-padding-large uk-margin-large-bottom">
