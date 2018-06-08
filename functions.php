@@ -26,6 +26,7 @@ $instanceOrangeaServices = new WP_orangea_services();
 //
 add_action('orangea_section_bg', 'action_section_bg', 10, 3);
 add_action('orangea_home_bg', 'action_home_bg', 10, 2);
+add_action('orangea_enqueue_options_script', 'action_enqueue_option_scripts', 10, 1);
 
 add_action( 'init', function () {
 	// Creer une nouvelle post 'section'
@@ -137,11 +138,31 @@ add_action( 'wp_enqueue_scripts', function () {
  * @param $name String
  */
 function og_get_view_content ($name, $args) {
-	$located = get_template_directory() . '/templates/views/' . $name . 'View.php';
-	if (file_exists($located)) :
+  if (is_array($name)) {
+    $nameExtact = implode('-', $name);
+    $filename = $nameExtact;
+  }
+
+  if (is_string($name))
+    $filename = $name;
+
+  if ( ! isset($filename)) return false;
+  $fileLocation = get_template_directory() . '/templates/views/' . $filename . 'View.php';
+	if (file_exists($fileLocation)) :
 		extract($args, EXTR_OVERWRITE);
-		include $located;
+		include $fileLocation;
 	endif;
+}
+
+if( function_exists('acf_add_options_page') ) {
+	// Premier menu d'options
+	acf_add_options_page(array(
+		'page_title'    => 'Orangea',
+		'menu_title'    => 'Orangea Options',
+		'menu_slug'     => 'options-orangea',
+		'capability'    => 'edit_posts',
+		'redirect'      => true
+  ));
 }
 
 // Register string (polylang plugins)

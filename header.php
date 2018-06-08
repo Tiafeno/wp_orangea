@@ -72,9 +72,60 @@
     // true - Mode teste unitaire
     // false - Mode production
     <?php $QUnit = WP_DEBUG == false ? 0 : 1; ?>
-    var QUnitTest = <?php echo $QUnit ?>;
+    var QUnitTest = <?= $QUnit ?>;
 
     (function (jQ) {
+      
+        /**
+         * Convert image url to base64
+         */
+        var toDataURL = function (post) {
+          return new Promise(function (resolve, reject) {
+            if (false == post.thumbnail_url) reject(false);
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+              var reader = new FileReader();
+              reader.onloadend = function () {
+                post.blob = reader.result;
+                resolve( post );
+              }
+              reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', post.thumbnail_url);
+            xhr.responseType = 'blob';
+            xhr.send();
+          });
+        }
+        
+        /**
+         * Change an element background image with define interval
+         * @param $selector {selector} jQuery
+         * @param $post {Array} of media post
+         */
+        var bgChange = function ($selector, $post) {
+          var postMediaBg = [];
+          if ($selector === '' || $selector === null) return;
+          var Element = is_string($selector) ? jQ($selector) : $selector;
+          if (Element.length > 0) {
+            jQ.each(Element, function (index, el) {
+              toDataURL
+                .then(function (response) {
+                  var postContent = response;
+                  postMediaBg.push(postContent);
+                })
+            });
+
+            window.setInterval( function () {
+              var posts = postMediaBg.concat();
+              var position = _.random(0, posts.length);
+              var post = posts[ position ];
+              Element.css({
+                'background-image': "url(" + post.blob + ")";
+              });
+            }, 2000);
+          }
+        };
+
       jQ(document).ready(function () {
         var bgTop = jQ('.__org_bg_top');
         var bgBottom = jQ('.__org_bg_bottom');
@@ -98,6 +149,7 @@
             });
           });
         };
+        
         /**
          * Constructeur
          * @private
