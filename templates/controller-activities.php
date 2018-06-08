@@ -29,23 +29,19 @@
  */
 use Underscore\Types\Arrays;
 if (isset($post_acf)) :
-
 	$section = Arrays::filter($post_acf, function ($value) {
 		return $value->__org_type == "activity";
 	});
-
 	// Afficher les pages par ordre de leur id
 	$section = Arrays::sort($section, function ($article) {
 	  return $article->__org_section_id;
 	}, 'asc');
 endif;
-
 if (is_array($section)):
 	foreach (array_values($section) as $index => $activitie) :
 	  $activity_menu = empty($activitie->__org_activity_menu) ? null : $activitie->__org_activity_menu;
 	  $class = ! empty($activitie->__org_section_class) ? $activitie->__org_section_class : "";
 	  $identification = ! empty($activitie->__org_section_id) ? $activitie->__org_section_id : '';
-
 	  og_get_view_content('activity',
 		  compact(
 	  	"activitie",

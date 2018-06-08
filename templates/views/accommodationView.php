@@ -4,6 +4,13 @@ use Underscore\Types\Arrays;
 <style type="text/css">
   <?php do_action('orangea_section_bg', '.org-2-section', $section, $background); ?>
 </style>
+<script type="text/javascript">
+  (function ($) {
+    $(document).ready(function () {
+      
+    });
+  })(jQuery);
+</script>
 <div class="org-2-section __org_parent">
 	<div class="__org-bg __org_parallax">
 
