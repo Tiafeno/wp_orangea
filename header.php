@@ -175,7 +175,6 @@
           })
           .on('mouseover', function (e) {
             e.preventDefault();
-
             var tabName = jQ(this).data('tab');
             jQ.tab('change tab', tabName);
             var listParent = jQ(this).parents('.__menu_line');
@@ -240,21 +239,17 @@
           var eightBgWidth = eightBg.width();
           var eightBgHeight = eightBg.height();
           var bgWidth, bgHeight;
-
           var imgUrl = getBgImgElement(eightBg);
           getImageData(imgUrl)
             .then(function (response) {
-
               // Modifier le variable par default
               var results = response;
               imgSize.width = results.width;
               imgSize.height = results.height;
-
               // Positionner la section
               if (eightBgWidth > eightBgHeight) {
                 bgWidth = eightBgWidth;
                 bgHeight = (bgWidth * imgSize.height) / imgSize.width;
-
                 if (bgHeight < eightBgHeight) {
                   var space = eightBgHeight - bgHeight;
                   bgHeight += space;
@@ -268,7 +263,6 @@
                   top: mesure + "px",
                   "margin-bottom": mesure + "px"
                 });
-
               eightBg
                 .css({
                   //"background-size": Math.ceil(bgWidth) + "px " + bgHeight + "px"
@@ -277,9 +271,7 @@
             })
             .catch(function (reason) {
               console.warn(reason);
-
             });
-
         }
 
         // @sync(onResize)
@@ -301,20 +293,14 @@
             height: parseInt(maxHeightValue)
           });
         }
-
         resizeEight();
         setMinHeight();
         jQ(window).resize(function () {
           setMinHeight();
-
           sectionWidth = eightSection.innerWidth();
           resizeEight();
         });
-
-
       }); // document ready
-
-
     })(jQuery);
   </script>
 
@@ -356,11 +342,13 @@
       min-width: 48%;
     }
 
-    .container-footer ul > li a:hover {
+    .container-footer .widget_nav_menu li > a {
       color: #F6AC62;
+      cursor: text;
+      text-decoration: none;
     }
 
-    .container-footer ul > li a {
+    .container-footer ul > li {
       text-decoration: none;
       color: #F6AC62;
       font-size: 12px;
@@ -421,8 +409,8 @@
       100% { transform: scale(1); }
     }
     @keyframes Zoom {
-      0% { transform: scale(1.6); }
-      100% { transform: scale(1.8); }
+      0% { transform: scale(1.75); }
+      100% { transform: scale(1.80); }
     }
   </style>
 </head>

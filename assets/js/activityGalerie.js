@@ -27,11 +27,9 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
     templateUrl : orangea.templateUrl + "galerie.html",
     link: function (scope, element, attrs) {
       scope.sectionId = attrs.galerieData;
-
       var form = new FormData();
       form.append('action', 'action_get_galerie');
       form.append('section_id', scope.sectionId);
-
       HTTPServices
         .getGalerie(form)
         .then(function (response) {
@@ -51,9 +49,7 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
             scope.$apply();
           }, 2500);
         }, function (error) {
-
         });
-
       element
         .bind('click', function (event) {
 
@@ -69,7 +65,7 @@ App.directive('zoomAnimation', function () {
     link : function (scope, element) {
       element.css({
         'background-position': 'center center',
-        'animation': 'shrink 3.5s infinite alternate',
+        'animation': 'shrink 4s infinite alternate',
         'animation-timing-function' : 'ease-in'
       });
     }
@@ -85,7 +81,7 @@ App.directive('scaleAnimation', function () {
         position: 'absolute',
         height: 'inherit',
         width: '100%',
-        animation: 'Zoom 3.5s infinite alternate',
+        animation: 'Zoom 4s infinite alternate',
         'animation-timing-function' : 'ease-out'
       });
     }
