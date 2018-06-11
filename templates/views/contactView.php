@@ -79,6 +79,7 @@
   
   .contact-social .uk-icon-button {
     border-radius: 5px !important;
+    color: #211e1e;
   }
 
 </style>
