@@ -80,7 +80,7 @@ use Underscore\Types\Arrays;
 													<ul class="uk-padding-remove uk-margin-remove-bottom">
 														<?php endif;
 
-														echo '<li><a>'. $current_child->post_title .'</a></li>';
+														echo '<li>'. $current_child->post_title .'</li>';
 
 														$is_child = false;
 														continue;
@@ -95,10 +95,10 @@ use Underscore\Types\Arrays;
 
 																<?php if (is_array($subchilds)) : ?>
 																	<?php foreach ($subchilds as $subchild) : ?>
-																		<li><a><?= $subchild->post_title ?></a></li>
+																		<li><?= $subchild->post_title ?></li>
 																	<?php endforeach; ?>
 																<?php else: ?>
-																	<li><a><?= $current_child->post_title ?></a> </li>
+																	<li><?= $current_child->post_title ?></li>
 																<?php endif; ?>
 
 															</ul>

@@ -20,6 +20,11 @@ class WP_orangea_services {
 		return $menu_items;
 	}
 
+	/**
+	 * @param array $menu_items
+	 *
+	 * @return array
+	 */
 	public static function get_menu_items_content ($menu_items = array()) {
 		$items = [];
 		if ( ! is_array($menu_items)) return $menu_items;
