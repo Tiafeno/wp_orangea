@@ -207,9 +207,9 @@
         var devideBg = $(el).find(".__org_devider_bg");
         if (devideBg.length == 0) return;
         var mesure;
-        mesure = (deviderWidth > 959) ? deviderWidth / 2 : deviderWidth;
+        mesure = (deviderWidth > 959) ? (deviderWidth / 2) + 70 : deviderWidth;
         devideBg.css({
-          width: mesure + 70 + "px"
+          width: mesure + "px"
         });
       });
     };
