@@ -133,7 +133,7 @@ class WP_Orangea {
 	public function get_published_sections() {
 		$quered = [];
 
-		// Récuperer le code de la langue en acctuelle e.g: fr
+		// Récuperer le code de la langue en actuelle e.g: fr
 		$localLang = pll_current_language();
 		$args      = [
 			'post_type'      => _OG_POSTTYPE_,
@@ -144,11 +144,9 @@ class WP_Orangea {
 		query_posts( $args );
 		if ( have_posts() ) {
 			while ( have_posts() ): the_post();
-
 				// Il est important d'appliquer la filtre 'the_content'
 				// Pour executer les autres filtres qui s'accroche sur cette l'article
 				apply_filters( 'the_content', get_the_content() );
-
 				// Récuperer et enregistrer l'object WP_Post de cette article
 				array_push( $quered, get_post() );
 			endwhile;

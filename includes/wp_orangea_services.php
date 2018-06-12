@@ -76,7 +76,7 @@ class WP_orangea_services {
 					break;
 			endswitch;
 		}
-		$background->position = explode('_', $post->__org_bg_pos);
+		$background->position = explode('_', $post->__org_bg_pos[0]);
 		return $background;
 	}
 

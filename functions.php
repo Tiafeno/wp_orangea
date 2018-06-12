@@ -88,7 +88,9 @@ add_action ( 'widgets_init', function () {
 		'id'            => 'menu-area',
 		'description'   => 'Add widgets here to appear in accommodation section.',
 		'before_widget' => '<div id="%1$s" class="%2$s uk-text-meta menu-area">',
-		'after_widget'  => '</div>'
+		'after_widget'  => '</div>',
+		'before_title' => '<div class="uk-hidden">',
+		'after_title'  => '</div>'
 	) );
 
 	// Element liste
@@ -97,13 +99,16 @@ add_action ( 'widgets_init', function () {
 		'id'            => 'list-area',
 		'description'   => 'Add widgets here to appear in right container footer.',
 		'before_widget' => '<div id="%1$s" class="%2$s">',
-		'after_widget'  => '</div>'
+		'after_widget'  => '</div>',
+		'before_title' => '<div class="uk-hidden">',
+		'after_title'  => '</div>'
 	) );
 });
 
 add_action( 'wp_enqueue_scripts', function () {
+	$upload_dir = wp_upload_dir();
 	wp_enqueue_script('underscore');
-	wp_enqueue_script('jquery');
+	// wp_enqueue_script('jquery');
 
 	// Qunit test unit
 	if (WP_DEBUG):
@@ -141,7 +146,18 @@ add_action( 'wp_enqueue_scripts', function () {
 	endif;
 
 	wp_enqueue_script( 'menu', get_template_directory_uri() . '/assets/js/menu.js',
-		array( 'jquery' ), 1, true );
+		array( 'jquery' ), '1.0.0', true );
+
+	/** Visual composer dependance */
+	wp_enqueue_script( 'simpleImageSlider', $upload_dir['baseurl'] .
+	                                        '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/simpleImageSlider.min.js', array( 'jquery' ), '2.6.1', true );
+
+	wp_enqueue_script( 'slick', $upload_dir['baseurl'] .
+	                            '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/slick.custom.min.js', array( 'jquery' ), '2.6.1', true );
+
+	wp_enqueue_script( 'fullHeightRow', $upload_dir['baseurl'] .
+	                            '/visualcomposer-assets/elements/row/row/public/dist/fullHeightRow.min.js', array( 'jquery' ), '2.6.1', true );
+
 });
 
 
