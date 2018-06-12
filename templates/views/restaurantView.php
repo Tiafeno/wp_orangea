@@ -37,7 +37,7 @@
 					     style="position:relative; width: 100%;">
 						<div class="uk-padding-large uk-padding-remove-left __org_support">
 
-							<div id="<?= sanitize_title($section->post_title) ?>" class="">
+							<div id="<?= $section->post_name ?>" class="restaurant">
 								<h2
 									class="__org_header_white ui header uk-margin-small-top"
 									uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">

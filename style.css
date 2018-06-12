@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5 {
     padding-left: 10px !important;
     color: #FFFFFF;
     text-decoration: none;
+    font-size: 13px;
 }
 
 .__primary_menu .__menu > ul > li > a:hover,
@@ -363,7 +364,7 @@ div.org-5-section .__org_header_white {
     line-height: 0.7;
 }
 
-.org-5-section #restaurant {
+.org-5-section .restaurant {
     background: rgba(4, 4, 4, 0.83);
     padding: 20px;
     border-top-right-radius: 15px;
@@ -520,7 +521,7 @@ Titre et sous-titre
 }
 
 .__org_parent h2 > .sub.header {
-    font-size: 45px !important;
+    font-size: 40px !important;
     line-height: 0.5 !important;
 }
 

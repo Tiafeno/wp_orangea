@@ -22,9 +22,8 @@
  */
 
 $localUrl = esc_url( get_template_directory_uri() ) . "/img/unsplash.jpg";
-$url = isset($background->url) ? $background->url : $localUrl
+$url = isset($background->url) ? $background->url : $localUrl;
 ?>
-
 <style type="text/css">
 	<?php do_action('orangea_section_bg', '.org-6-section', $section, $background); ?>
 </style>
@@ -36,7 +35,7 @@ $url = isset($background->url) ? $background->url : $localUrl
 			<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
 				<div class="__org_support uk-padding-large uk-margin-large-bottom">
 					<div class="uk-padding-large uk-padding-remove-left uk-padding-remove-vertical">
-						<h2 class="ui header __org_header_white" id="<?= sanitize_title( $section->post_title ) ?>">
+						<h2 class="ui header __org_header_white" id="<?= $section->post_name ?>">
 							<?= $section->post_title ?>
 						</h2>
 						<aside class="uk-text-medium uk-width-1-1 uk-width-1-3@l __org_description">

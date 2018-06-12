@@ -92,7 +92,7 @@
         class="__org_support uk-padding-large uk-padding-remove-bottom uk-margin-medium-bottom uk-display-block"
         uk-grid>
 
-        <div class="uk-width-1-1" id="<?= sanitize_title( $section->post_title ) ?>">
+        <div class="uk-width-1-1" id="<?= $section->post_name ?>">
           <h2 id="contact" class="__org_header_white uk-flex"><?= $section->post_title ?></h2>
         </div>
 
