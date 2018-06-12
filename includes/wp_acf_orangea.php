@@ -1,6 +1,7 @@
 <?php
 if( function_exists('acf_add_local_field_group') ):
 
+	/** Option page */
 	acf_add_local_field_group(array(
 		'key' => 'group_5b1ae1e9d350f',
 		'title' => 'Options',
@@ -106,6 +107,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
 
+	/** Section Post type */
 	acf_add_local_field_group(array(
 		'key' => 'group_5b1a21a615e8d',
 		'title' => 'Réglages de section',
@@ -701,6 +703,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
 
+	/** Page : Home page option */
 	acf_add_local_field_group(array(
 		'key' => 'group_5b1a21a643226',
 		'title' => 'Réglage de la page d\'accueil',
@@ -947,5 +950,50 @@ e.g 0px 12px',
 		'active' => 1,
 		'description' => '',
 	));
+
+	/** Menu Item : Widget Position */
+	acf_add_local_field_group(array(
+		'key' => 'group_5b2004ae186f3',
+		'title' => 'Menu Widget',
+		'fields' => array(
+			array(
+				'key' => 'field_5b2004a8940d4',
+				'label' => 'Widget Position',
+				'name' => 'widget_position',
+				'type' => 'text',
+				'instructions' => 'Ajouter ici le nom du Widget que vous voulez afficher.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'nav_menu_item',
+					'operator' => '==',
+					'value' => 'all',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => 1,
+		'description' => '',
+	));
+
 
 endif;

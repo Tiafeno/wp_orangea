@@ -24,7 +24,7 @@ use Underscore\Types\Arrays;
 				<div class="uk-flex uk-width-1-2@m uk-width-1-1">
 					<div class="uk-margin-auto-vertical __org_bg_sensor">
 						<div class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-bottom  __org_support"
-						     id="<?= sanitize_title($section->post_title) ?>"
+						     id="<?= $section->post_name ?>"
 						     uk-parallax="opacity: 0,1; y: -100, 0; viewport: 0.3">
 							<div class="container-content uk-padding-large uk-padding-remove-vertical">
 								<h2 class="__org_header_white ui header uk-margin-small-top"
@@ -107,10 +107,11 @@ use Underscore\Types\Arrays;
 														<?php if ( ! $is_child) : ?> </div> <?php endif; ?>
 												<div class="uk-width-1-2 uk-width-1-2@s uk-float-left">
 													<?php
-													$sidebar = sanitize_title(trim($parent->attr_title));
-													if ( is_active_sidebar( $sidebar ) ) :
-														dynamic_sidebar( $sidebar );
-													endif;
+													$widget = get_field('widget_position', $parent);
+													if ($widget)
+                            if ( is_active_sidebar( $widget ) ) :
+                              dynamic_sidebar( $widget );
+                            endif;
 													?>
 												</div>
 											</div>
