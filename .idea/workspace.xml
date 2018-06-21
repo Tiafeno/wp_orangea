@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655c4c48-cc2c-4782-8ae7-5d5dc0a1ef75" name="Default" comment="Added section identification">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/orangea-actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions/orangea-actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/activityGalerie.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/activityGalerie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wp_orangea.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wp_orangea.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/views/accommodationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/accommodationView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/controller-about.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/controller-about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/controller-accommodation.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/controller-accommodation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/controller-activities.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/controller-activities.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/controller-contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/controller-contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/controller-restaurant.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/controller-restaurant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/aboutView.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/aboutView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/views/contactView.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/views/contactView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,25 +29,30 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer/composer.json</pharConfigPath>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="wp_orangea" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="accommodationView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/views/accommodationView.php">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="orangea-actions.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/actions/orangea-actions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+            <state relative-caret-position="76">
+              <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -47,8 +60,35 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1587">
-              <caret line="200" column="30" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
+            <state relative-caret-position="-1602">
+              <caret line="290" selection-start-line="290" selection-end-line="290" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orangea.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/orangea.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1330">
+              <caret line="123" column="42" lean-forward="true" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller-contact.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/controller-contact.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -60,9 +100,10 @@
       <list>
         <option value="CSS File" />
         <option value="WordPress Main Plugin File" />
-        <option value="JavaScript File" />
         <option value="package_json" />
         <option value="FxmlFile" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -89,6 +130,10 @@
       <find>allListSelector</find>
       <find>embed_wpb_custom_css</find>
       <find>ini_set</find>
+      <find>color</find>
+      <find>resta</find>
+      <find>transiti</find>
+      <find>book_link</find>
     </findStrings>
     <replaceStrings>
       <replace>#org-3-section</replace>
@@ -127,31 +172,41 @@
         <option value="$PROJECT_DIR$/templates/content-restaurant.php" />
         <option value="$PROJECT_DIR$/templates/content-activities.php" />
         <option value="$PROJECT_DIR$/tpl-orangea.php" />
-        <option value="$PROJECT_DIR$/templates/controller-about.php" />
-        <option value="$PROJECT_DIR$/templates/controller-contact.php" />
-        <option value="$PROJECT_DIR$/templates/controller-activities.php" />
         <option value="$PROJECT_DIR$/page.php" />
         <option value="$PROJECT_DIR$/single.php" />
-        <option value="$PROJECT_DIR$/templates/views/contactView.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/assets/js/orangea-test.js" />
-        <option value="$PROJECT_DIR$/templates/views/activityView.php" />
         <option value="$PROJECT_DIR$/assets/js/orangea.js" />
-        <option value="$PROJECT_DIR$/templates/views/galerieView.php" />
-        <option value="$PROJECT_DIR$/templates/controller-galerie.php" />
-        <option value="$PROJECT_DIR$/templates/controller-accommodation.php" />
-        <option value="$PROJECT_DIR$/templates/views/restaurantView.php" />
-        <option value="$PROJECT_DIR$/templates/controller-restaurant.php" />
-        <option value="$PROJECT_DIR$/includes/wp_orangea_services.php" />
-        <option value="$PROJECT_DIR$/functions.php" />
-        <option value="$PROJECT_DIR$/home.php" />
-        <option value="$PROJECT_DIR$/includes/wp_orangea.php" />
+        <option value="$PROJECT_DIR$/assets/js/templates/galerie.html" />
         <option value="$PROJECT_DIR$/actions/orangea-actions.php" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/templates/views/restaurantView.php" />
+        <option value="$PROJECT_DIR$/templates/views/activityView.php" />
+        <option value="$PROJECT_DIR$/templates/views/galerieView.php" />
+        <option value="$PROJECT_DIR$/includes/wp_orangea_services.php" />
+        <option value="$PROJECT_DIR$/includes/wp_acf_orangea.php" />
         <option value="$PROJECT_DIR$/templates/views/accommodationView.php" />
+        <option value="$PROJECT_DIR$/includes/wp_orangea.php" />
+        <option value="$PROJECT_DIR$/libs/angularjs/angular.js" />
+        <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/templates/controller-contact.php" />
+        <option value="$PROJECT_DIR$/templates/controller-galerie.php" />
+        <option value="$PROJECT_DIR$/templates/controller-restaurant.php" />
+        <option value="$PROJECT_DIR$/templates/controller-accommodation.php" />
+        <option value="$PROJECT_DIR$/templates/controller-about.php" />
+        <option value="$PROJECT_DIR$/templates/controller-activities.php" />
+        <option value="$PROJECT_DIR$/templates/views/aboutView.php" />
+        <option value="$PROJECT_DIR$/assets/js/activityGalerie.js" />
+        <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/templates/views/contactView.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="$USER_HOME$/AppData/Roaming/npm/node_modules/bower" />
+    <bower.json value="" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -183,11 +238,11 @@
       <path value="$PROJECT_DIR$/composer/vendor/anahkiasen/underscore-php" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
-    <option name="width" value="1452" />
-    <option name="height" value="835" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -195,8 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,17 +271,14 @@
             <path>
               <item name="wp_orangea" type="b2602c69:ProjectViewProjectNode" />
               <item name="wp_orangea" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wp_orangea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wp_orangea" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wp_orangea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wp_orangea" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wp_orangea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wp_orangea" type="462c0819:PsiDirectoryNode" />
-              <item name="mutsa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wp_orangea" type="b2602c69:ProjectViewProjectNode" />
@@ -246,9 +296,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -264,7 +317,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\adverts\wp-content\themes\wp_orangea" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -393,7 +451,22 @@
       <workItem from="1527417044056" duration="1517000" />
       <workItem from="1527452643576" duration="987000" />
       <workItem from="1527482876468" duration="6045000" />
-      <workItem from="1528435222235" duration="689000" />
+      <workItem from="1528435222235" duration="40794000" />
+      <workItem from="1528524667821" duration="1919000" />
+      <workItem from="1528553538477" duration="2126000" />
+      <workItem from="1528561661811" duration="158000" />
+      <workItem from="1528564735215" duration="2058000" />
+      <workItem from="1528610795839" duration="1729000" />
+      <workItem from="1528707474087" duration="458000" />
+      <workItem from="1528707960559" duration="809000" />
+      <workItem from="1528801071137" duration="2353000" />
+      <workItem from="1528806143776" duration="1601000" />
+      <workItem from="1528812444545" duration="12504000" />
+      <workItem from="1528879437203" duration="2321000" />
+      <workItem from="1528956780401" duration="467000" />
+      <workItem from="1528962866400" duration="663000" />
+      <workItem from="1528993932882" duration="11171000" />
+      <workItem from="1529609411030" duration="4879000" />
     </task>
     <task id="LOCAL-00001" summary="Added section identification">
       <created>1526497898543</created>
@@ -542,15 +615,42 @@
       <option name="project" value="LOCAL" />
       <updated>1527358347995</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Orangea Finalisation">
+      <created>1528499715842</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1528499715842</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added ACF field in menu item">
+      <created>1528830645544</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1528830645544</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fix Visual composer element &quot;Simple Image Slider&quot; don't visible">
+      <created>1528830821085</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1528830821085</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Change title &quot;h2&quot; id for post name (slug)">
+      <created>1528830873943</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1528830873943</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202594000" />
+    <option name="totallyTimeSpent" value="287915000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="2" width="1452" height="835" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32871014" />
@@ -560,14 +660,15 @@
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32872927" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="1" visible="true" weight="0.346211" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.31629834" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="1" visible="true" weight="0.34392264" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.26213592" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.59116024" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Remote Host" order="8" weight="0.18465045" />
       <window_info anchor="right" id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.5947047" visible="true" weight="0.16091955" />
-      <window_info anchor="right" id="Database" order="2" />
+      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.5947047" visible="true" weight="0.15544413" />
+      <window_info anchor="right" id="Database" order="2" weight="0.32978722" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -582,14 +683,13 @@
       <window_info anchor="right" x="0" y="0" width="314" height="686" id="Documentation" order="10" side_tool="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.3218232" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Designer" order="1" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Remote Host" order="8" weight="0.18465045" />
       <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.26213592" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3277027" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -599,23 +699,23 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Commander" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.32872927" />
-      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.3218232" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.31629834" />
       <window_info anchor="right" x="0" y="0" width="314" height="686" id="Documentation" order="10" side_tool="true" weight="0.3295129" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
       <window_info id="npm" order="0" sideWeight="0.25375938" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3218232" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.34439835" />
       <window_info anchor="right" id="Maven Projects" order="0" weight="0.3295129" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.5947047" visible="true" weight="0.15401146" />
-      <window_info anchor="right" id="Database" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.5947047" visible="true" weight="0.15544413" />
+      <window_info anchor="right" id="Database" order="2" weight="0.32978722" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32871014" />
       <window_info id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.3277027" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.39917126" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.26213592" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +746,11 @@
     <MESSAGE value="Added restaurant background options" />
     <MESSAGE value="Remove 'embed_wpb_custom_css' function" />
     <MESSAGE value="Fix section background (home page background)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix section background (home page background)" />
+    <MESSAGE value="Orangea Finalisation" />
+    <MESSAGE value="Added ACF field in menu item" />
+    <MESSAGE value="Fix Visual composer element &quot;Simple Image Slider&quot; don't visible" />
+    <MESSAGE value="Change title &quot;h2&quot; id for post name (slug)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change title &quot;h2&quot; id for post name (slug)" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>H:\wordpress-4.9.5</wordpressPath>
@@ -661,38 +765,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/views/galerieView.php">
+    <entry file="file://$PROJECT_DIR$/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="437">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="30" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -738,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_PLUGINS_DIR$/php/lib/php.jar!/stubs/Core/Core.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -768,20 +837,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/svg/org-4-section.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="67" column="61" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/svg/org-3-section.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/svg/org-4-section.tpl.php" />
+    <entry file="file://$PROJECT_DIR$/templates/svg/org-3-section.tpl.php" />
     <entry file="file://$PROJECT_DIR$/templates/package.json" />
     <entry file="file://$PROJECT_DIR$/composer/vendor/patchwork/utf8/src/Patchwork/PHP/Shim/Mbstring.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -801,20 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="145" column="5" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/aboutView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/controller-about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -847,13 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mutsa/mutsa.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -861,142 +897,208 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/galerieView.php">
+    <entry file="file://$PROJECT_DIR$/assets/js/templates/galerie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="24" selection-start-line="24" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="456">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/contactView.php">
+    <entry file="file://$PROJECT_DIR$/actions/orangea-actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1881">
-          <caret line="118" column="12" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+        <state relative-caret-position="203">
+          <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/controller-contact.php">
+    <entry file="file://$PROJECT_DIR$/includes/wp_orangea_menu_walker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="26" column="58" lean-forward="true" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/controller-accommodation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/controller-galerie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wp_orangea_services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="684">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/views/restaurantView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="23" selection-start-line="23" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="380">
+          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/views/galerieView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/views/activityView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/views/accommodationView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="113" column="34" lean-forward="true" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/html5.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1742">
+          <caret line="122" selection-start-line="122" selection-end-line="122" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wp_orangea_services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="134" column="93" selection-start-line="134" selection-start-column="93" selection-end-line="134" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/controller-galerie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/controller-restaurant.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="73" />
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wp_orangea_menu_walker.php">
+    <entry file="file://$PROJECT_DIR$/templates/controller-accommodation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        <state relative-caret-position="399">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/activityView.php">
+    <entry file="file://$PROJECT_DIR$/templates/controller-about.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        <state relative-caret-position="228">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/controller-activities.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+        <state relative-caret-position="548">
+          <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/views/aboutView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/activityGalerie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291">
+          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/orangea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2223">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state relative-caret-position="1330">
+          <caret line="123" column="42" lean-forward="true" selection-start-line="123" selection-start-column="42" selection-end-line="123" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
+    <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="254" column="29" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
+        <state relative-caret-position="190">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/wp_orangea.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="333">
+          <caret line="45" column="70" lean-forward="true" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
+    <entry file="file://$PROJECT_DIR$/templates/views/contactView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1868">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        <state relative-caret-position="260">
+          <caret line="110" column="18" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wp_acf_orangea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4543">
+          <caret line="336" column="22" lean-forward="true" selection-start-line="336" selection-start-column="22" selection-end-line="336" selection-end-column="22" />
+          <folding>
+            <element signature="e#22239#23160#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/controller-contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1587">
-          <caret line="200" column="30" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
+        <state relative-caret-position="-1602">
+          <caret line="290" selection-start-line="290" selection-end-line="290" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/accommodationView.php">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actions/orangea-actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        <state relative-caret-position="152">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />

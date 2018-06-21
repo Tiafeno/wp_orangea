@@ -29,7 +29,6 @@ class WP_Orangea {
 	 * Ajouter les posts meta ACF dans la variable post
 	 *
 	 * @param WP_POST $post
-	 *
 	 * @return mixed
 	 */
 	private static function add_post_fields( &$post ) {
@@ -66,7 +65,6 @@ class WP_Orangea {
 
 	/**
 	 * @param array $posts
-	 *
 	 * @return array|bool
 	 */
 	public static function get_acf_params( $posts ) {
@@ -79,7 +77,6 @@ class WP_Orangea {
 				self::add_post_fields( $post );
 				array_push( $posts_acf, $post );
 			endforeach;
-
 			return $posts_acf;
 		} else {
 			return false;
@@ -88,7 +85,6 @@ class WP_Orangea {
 
 	/**
 	 * @param array $posts
-	 *
 	 * @return array|bool
 	 */
 	public static function get_page_acf_params( &$post ) {

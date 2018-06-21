@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Orangea" uploadOnCheckin="f2e03365-35ec-4938-b04e-adef4b40d8a3">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Orangea">
     <serverData>
       <paths name="Orangea">
         <serverdata>
@@ -11,7 +11,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="Orangea" />
     <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>
 </project>

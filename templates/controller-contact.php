@@ -23,24 +23,27 @@
 
 use Underscore\Types\Arrays;
 
-if (isset($post_acf))
-	$section = Arrays::filter($post_acf, function ($value) {
+if ( isset( $post_acf ) ) {
+	$section = Arrays::filter( $post_acf, function ( $value ) {
 		return $value->__org_type == "contact";
-	});
+	} );
+}
 
-if ( ! empty( $section )) :
-	list($contact) = array_values( $section );
-	$social_media = get_field('reseaux_social', 'option');
-	$socials = [];
-	foreach ($social_media as $key => $social) {
-		if (empty($social_media[$key])) continue;
-		$content = ['url' => $social_media[$key], 'icon' => $key];
-		array_push($socials, (object)$content);
+if ( ! empty( $section ) ) :
+	list( $contact ) = array_values( $section );
+	$social_media = get_field( 'reseaux_social', 'option' );
+	$socials      = [];
+	foreach ( $social_media as $key => $social ) {
+		if ( empty( $social_media[ $key ] ) ) {
+			continue;
+		}
+		$content = [ 'url' => $social_media[ $key ], 'icon' => $key ];
+		array_push( $socials, (object) $content );
 	}
 	$globalParams = [
-	  'section' => $contact,
+		'section' => $contact,
 		'socials' => $socials
-  ];
-	og_get_view_content('contact', $globalParams);
+	];
+	og_get_view_content( 'contact', $globalParams );
 endif;
 ?>

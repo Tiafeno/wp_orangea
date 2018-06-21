@@ -24,7 +24,7 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
   return {
     restrict: "E",
     scope: true,
-    templateUrl : orangea.templateUrl + "galerie.html",
+    templateUrl: orangea.templateUrl + "galerie.html",
     link: function (scope, element, attrs) {
       scope.sectionId = attrs.galerieData;
       var form = new FormData();
@@ -34,7 +34,7 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
         .getGalerie(form)
         .then(function (response) {
           var data = response.data;
-          if (_.isNull(data) || false === data || ! _.isArray(data)) return;
+          if (_.isNull(data) || false === data || !_.isArray(data)) return;
           var loadData = [];
           _.each(data, function (galerie) {
             Convert
@@ -45,7 +45,7 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
           });
           $window.setInterval(function () {
             var position = _.random(0, loadData.length - 1);
-            scope.imageUrl = loadData[ position ].blob;
+            scope.imageUrl = loadData[position].blob;
             scope.$apply();
           }, 2500);
         }, function (error) {
@@ -62,11 +62,11 @@ App.directive('zoomAnimation', function () {
   return {
     restrict: "A",
     scope: false,
-    link : function (scope, element) {
+    link: function (scope, element) {
       element.css({
         'background-position': 'center center',
         'animation': 'shrink 4s infinite alternate',
-        'animation-timing-function' : 'ease-in'
+        'animation-timing-function': 'ease-in'
       });
     }
   }
@@ -76,21 +76,21 @@ App.directive('scaleAnimation', function () {
   return {
     restrict: "A",
     scope: false,
-    link : function (scope, element) {
+    link: function (scope, element) {
       element.css({
         position: 'absolute',
         height: 'inherit',
         width: '100%',
         animation: 'Zoom 4s infinite alternate',
-        'animation-timing-function' : 'ease-out'
+        'animation-timing-function': 'ease-out'
       });
     }
   }
 });
 
-App.factory("HTTPServices", function( $http, $q) {
+App.factory("HTTPServices", function ($http, $q) {
   return {
-    getGalerie : function( formdata ) {
+    getGalerie: function (formdata) {
       return $http({
         url: orangea.ajax_url,
         method: "POST",
@@ -103,7 +103,7 @@ App.factory("HTTPServices", function( $http, $q) {
 
 App.factory('Convert', function () {
   return {
-    toBase64 : function (post) {
+    toBase64: function (post) {
       return new Promise(function (resolve, reject) {
         if (false === post.url || _.isNull(post.url) || _.isEmpty(post.url)) reject(false);
         var xhr = new XMLHttpRequest();
@@ -111,7 +111,7 @@ App.factory('Convert', function () {
           var reader = new FileReader();
           reader.onloadend = function () {
             post.blob = reader.result;
-            resolve( post );
+            resolve(post);
           };
           reader.readAsDataURL(xhr.response);
         };

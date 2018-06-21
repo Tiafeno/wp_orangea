@@ -20,17 +20,19 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
 use Underscore\Types\Arrays;
 
-if (isset($post_acf))
-	$section = Arrays::filter($post_acf, function ($about) {
+if ( isset( $post_acf ) ) {
+	$section = Arrays::filter( $post_acf, function ( $about ) {
 		return $about->__org_type == "about";
-	});
+	} );
+}
 
-if ( ! empty($section)):
-	list($about) = array_values($section);
+if ( ! empty( $section ) ):
+	list( $about ) = array_values( $section );
 	$globalParams = [
 		'section' => $about
 	];
-  og_get_view_content('about', $globalParams);
+	og_get_view_content( 'about', $globalParams );
 endif;

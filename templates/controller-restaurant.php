@@ -31,8 +31,8 @@ if (isset($post_acf))
 if ( ! empty( $section )) :
 	list($restaurant) = array_values( $section );
   $globalParams = [
-    'section' => $restaurant,
-    'background' => WP_orangea_services::get_post_bg_options($restaurant)
+	  'section'    => $restaurant,
+	  'background' => WP_orangea_services::get_post_bg_options( $restaurant )
   ];
   og_get_view_content('restaurant', $globalParams);
 endif;

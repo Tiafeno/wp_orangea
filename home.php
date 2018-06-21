@@ -12,7 +12,9 @@
  * @subpackage wp_orangea
  * @since Orangea 1.0
  */
-if ( ! function_exists("PLL")) exit("Please active polylang plugins");
+if ( ! function_exists( "PLL" ) ) {
+	exit( "Please active polylang plugins" );
+}
 global $instanceOrangea, $post;
 $lang_menus = $instanceOrangea->get_menu_translations();
 
@@ -21,21 +23,23 @@ $section_posts = $instanceOrangea->get_published_sections();
 
 // Return posts with acf fields
 $post_acf = WP_Orangea::get_acf_params( $section_posts );
-if (false === $post_acf) exit('<h2>Contenue indisponible pour le moment.</h2>');
+if ( false === $post_acf ) {
+	exit( '<h2>Contenue indisponible pour le moment.</h2>' );
+}
 
 // Variable global query templates
-set_query_var('post_acf', $post_acf);
+set_query_var( 'post_acf', $post_acf );
 
 // Home page ACF
-WP_Orangea::get_page_acf_params($post);
+WP_Orangea::get_page_acf_params( $post );
 get_header();
 ?>
 
 <div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom" ng-app="activityApp">
 	<!-- s@ -->
-  <style type="text/css">
-    <?php do_action('orangea_home_bg', '.org-section', $post); ?>
-  </style>
+	<style type="text/css">
+		<?php do_action('orangea_home_bg', '.org-section', $post); ?>
+	</style>
 	<div class="org-section __org_parent">
 		<div class="__org-bg __org_parallax">
 			<div class="__org-bg-shadow">
@@ -44,7 +48,7 @@ get_header();
 						<div class="uk-width-1-4@m uk-width-1-2">
 							<div class="__org_logo">
 								<!-- logo -->
-								<a target="_parent" href="<?= home_url('/') ?>">
+								<a target="_parent" href="<?= home_url( '/' ) ?>">
 									<img class="uk-logo" width="180" src="<?= get_template_directory_uri() . '/img/2x/logo@2x.png' ?>"/>
 								</a>
 								<!-- .end logo -->
@@ -58,9 +62,9 @@ get_header();
 									<div class="__top_menu">
 										<div class="__menu">
 											<ul class="uk-margin-remove __top_menu_container">
-                        <?php foreach ($lang_menus as $menu): ?>
-												<li><a href="<?= $menu->home_url ?>"><?= strtoupper( $menu->slug ) ?></a></li>
-                        <?php endforeach; ?>
+												<?php foreach ( $lang_menus as $menu ): ?>
+													<li><a href="<?= $menu->home_url ?>"><?= strtoupper( $menu->slug ) ?></a></li>
+												<?php endforeach; ?>
 											</ul>
 										</div>
 
@@ -68,12 +72,12 @@ get_header();
 
 									<div class="__primary_menu uk-visible@m">
 										<?php
-                      wp_nav_menu( array(
-                        'menu_class'      => '__primary_menu_container __menu_line',
-                        'container_class' => '__menu',
-                        'theme_location'  => 'primary',
-                        'walker' => new OG_Primary_Walker()
-                      ) );
+										wp_nav_menu( array(
+											'menu_class'      => '__primary_menu_container __menu_line',
+											'container_class' => '__menu',
+											'theme_location'  => 'primary',
+											'walker'          => new OG_Primary_Walker()
+										) );
 										?><!-- .primary_menu -->
 									</div>
 
@@ -81,7 +85,7 @@ get_header();
 										<nav>
 											<a href="#menu" class="tiny ui right labeled orange icon button">
 												<i class="right bars icon"></i>
-												<?= pll_e("MENU") ?>
+												<?= pll_e( "MENU" ) ?>
 											</a>
 										</nav>
 									</div>
@@ -90,13 +94,13 @@ get_header();
 								<!-- Menu -->
 								<nav id="menu" class="__nav_offcanvas uk-hidden@m">
 									<div class="inner">
-										<h2><?= pll_e("MENU") ?></h2>
+										<h2><?= pll_e( "MENU" ) ?></h2>
 										<?php
 										wp_nav_menu( array(
 											'menu_class'      => 'links',
 											'container_class' => '__menu',
 											'theme_location'  => 'primary',
-                      'walker' => new OG_offcanvas_Walker()
+											'walker'          => new OG_offcanvas_Walker()
 										) );
 										?><!-- .primary_offcanvas_menu -->
 
@@ -112,15 +116,15 @@ get_header();
 		</div>
 	</div>
 	<!-- .end s@ -->
-<?php
+	<?php
 
-  get_template_part('templates/controller', 'about');
-  get_template_part('templates/controller', 'accommodation');
-  get_template_part('templates/controller', 'activities');
-  get_template_part('templates/controller', 'restaurant');
-  get_template_part('templates/controller', 'galerie');
-  get_template_part('templates/controller', 'contact');
+	get_template_part( 'templates/controller', 'about' );
+	get_template_part( 'templates/controller', 'accommodation' );
+	get_template_part( 'templates/controller', 'activities' );
+	get_template_part( 'templates/controller', 'restaurant' );
+	get_template_part( 'templates/controller', 'galerie' );
+	get_template_part( 'templates/controller', 'contact' );
 
-  get_footer();
-  ?>
+	get_footer();
+	?>
 

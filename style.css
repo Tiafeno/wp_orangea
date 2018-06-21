@@ -4,7 +4,7 @@
   Author: Falicrea team
   Author URI: https://falicrea.com/
   Description: Orangea Hotels est située sur la côte ouest de Nosy Be. Les eaux profondes et les beaux paysages de l’île de Sakatia en font un lieu unique face au soleil couchant. Les marées du canal du Mozambique offrent un spectacle varié et attrayant. Vous pourrez vous détendre grâce aux chaises longues sous les paillotes. Les services de notre bar pourront y compléter votre confort, avec les cocktails de fruits rafraîchissants.
-  Version: 1.0.0
+  Version: 1.0.3
   License: MIT License v2 or later
   License URI:
   Tags: tourisme, Hotellerie, Nosy be, Madagascar, Malagasy, Malgache, Voyage, Réstaurant, Beach, Nosy
@@ -120,26 +120,6 @@ h1, h2, h3, h4, h5 {
     transform: translate(68px);
 }
 
-
-/*.__primary_menu .__menu li > a::after {*/
-/*content: "";*/
-/*display: block;*/
-/*width: 35%;*/
-/*height: 2px;*/
-/*}*/
-
-/*.__primary_menu .__menu li > a:hover::after {*/
-/*content: "";*/
-/*display: block;*/
-/*width: 35%;*/
-/*height: 2px;*/
-/*background: #dca568;*/
-/*-webkit-transition: bakcground 1s; !* Chrome *!*/
-/*-moz-transition: bakcground 1s; !* Mozilla *!*/
-/*-o-transition: bakcground 1s; !* Opera *!*/
-/*transition: background 1s;*/
-/*}*/
-
 .__org_bg_top,
 .__org_bg_bottom {
     z-index: 10 !important;
@@ -186,7 +166,7 @@ div.org-1-section .__org_bg_bottom {
 }
 
 div.org-1-section .__org_bg_top {
-    height: 72px;
+  height: 59px;
     width: 100%;
     background: url("img/SVG/2-top-bg.svg") repeat-x;
     position: relative;
@@ -255,8 +235,8 @@ div#org-3-section > .__org-bg {
     background-image: url("img/three-bg.png");
     background-color: #ffffff;
     background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 75%;
+  background-position: -19% bottom;
+  background-size: 57%;
 }
 
 div#org-3-section .__org_container {
@@ -514,15 +494,16 @@ Titre et sous-titre
 .__org_parent h2.ui.header {
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    font-size: 5em;
+  font-size: 4em;
     line-height: 0.8;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .__org_parent h2 > .sub.header {
-    font-size: 40px !important;
+  font-size: 34px !important;
     line-height: 0.5 !important;
+
 }
 
 .__org_tab_card {

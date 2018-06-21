@@ -41,7 +41,7 @@
 						<div class="uk-margin-auto-vertical">
 
 							<div class="uk-margin-medium-top">
-								<?= apply_filters("the_content", $section->post_content) ?>
+								<?= apply_filters( "the_content", $section->post_content ) ?>
 							</div>
 
 						</div>

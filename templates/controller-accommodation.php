@@ -20,32 +20,35 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
 use Underscore\Types\Arrays;
+
 global $og_global_args;
 
-if (isset($post_acf))
-	$section = Arrays::filter($post_acf, function ($value) {
+if ( isset( $post_acf ) ) {
+	$section = Arrays::filter( $post_acf, function ( $value ) {
 		return $value->__org_type == "accommodation";
-	});
+	} );
+}
 
-if ( ! empty($section)):
-	list($accommodation) = array_values($section);
+if ( ! empty( $section ) ):
+	list( $accommodation ) = array_values( $section );
 	$parents = [];
 	// Récuperer la galleries
-	$galleries = get_field('__org_bg_galeries', $accommodation->ID);
-	$menu = WP_orangea_services::get_menu_items_by_location('hebergement');
-	if ($menu) :
-		$parents = Arrays::filter($menu, function ($value) {
+	$galleries = get_field( '__org_bg_galeries', $accommodation->ID );
+	$menu      = WP_orangea_services::get_menu_items_by_location( 'hebergement' );
+	if ( $menu ) :
+		$parents = Arrays::filter( $menu, function ( $value ) {
 			return $value->menu_item_parent == 0;
-		});
-		$parents = array_values($parents);
+		} );
+		$parents = array_values( $parents );
 	endif;
 	$globalParams = [
-	  'section' => $accommodation,
-	  'background' => WP_orangea_services::get_post_bg_options($accommodation),
-		'galleries' => $galleries ? $galleries : null,
-    'parents' => $parents,
-    'menu' => $menu
-  ];
-	og_get_view_content('accommodation', $globalParams);
-	endif;
+		'section'    => $accommodation,
+		'background' => WP_orangea_services::get_post_bg_options( $accommodation ),
+		'galleries'  => $galleries ? $galleries : null,
+		'parents'    => $parents,
+		'menu'       => $menu
+	];
+	og_get_view_content( 'accommodation', $globalParams );
+endif;
