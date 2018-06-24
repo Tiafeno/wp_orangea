@@ -78,6 +78,7 @@ App.directive('scaleAnimation', function () {
     scope: false,
     link: function (scope, element) {
       element.css({
+        top: 180,
         position: 'absolute',
         height: 'inherit',
         width: '100%',
