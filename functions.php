@@ -25,6 +25,7 @@ require_once get_template_directory() . '/includes/wp_acf_orangea.php';
 // Create class instance
 $instanceOrangea         = new WP_Orangea();
 $instanceOrangeaServices = new WP_orangea_services();
+$detector                = new Mobile_Detect;
 
 //
 add_action( 'orangea_section_bg', 'action_section_bg', 10, 3 );

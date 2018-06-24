@@ -26,8 +26,6 @@
 </style>
 <div class="org-5-section __org_parent">
 	<div class="__org-bg ">
-		<div class="__org_bg_top"></div>
-
 		<div class="__org_container uk-container uk-container-large  __org_devider">
 			<!--<div class="__org_devider_bg"></div>-->
 			<div class="uk-padding-large uk-padding-remove-vertical" uk-grid>

@@ -1,12 +1,19 @@
+<?php
+global $detector;
+?>
 <div id="<?= $identification ?>" class="<?= $class ?> __org_parent">
 	<div class="__org-bg">
-		<div class="__org_bg_top"></div>
+
+		<?php if ( ! $detector->isMobile() ) : ?>
+			<div class="__org_bg_top"></div> <?php endif; ?>
+
 		<div class="uk-container uk-container-large __org_container">
 			<div class="__org_support uk-padding-large" uk-grid>
 
 				<div class="uk-width-1-2@m uk-width-1-1">
 					<div class="uk-padding-large uk-padding-remove-left uk-padding-remove-top">
-						<h2 id="<?= $activitie->post_name ?>" class="ui header" uk-parallax="opacity: 0,1; x: -100, 0; viewport: 0.5">
+						<h2 id="<?= $activitie->post_name ?>"
+						    class="ui header" <?php if ( ! $detector->isMobile() ) { ?> uk-parallax="opacity: 0,1; x: -100, 0; viewport: 0.5" <?php } ?>>
 							<?= $activitie->__org_subtitle ?>
 							<div class="sub header uk-margin-small-top">
 								<?= $activitie->post_title ?>
@@ -20,18 +27,20 @@
 						<?php
 						if ( has_nav_menu( $activity_menu )) :
 							$activitie_menu_items = WP_orangea_services::get_menu_items_by_location( $activity_menu );
-							$menu_items = WP_orangea_services::get_menu_items_content($activitie_menu_items);
+							$menu_items           = WP_orangea_services::get_menu_items_content( $activitie_menu_items );
 							?>
 							<script>
-                App.controller('MenuActivityCtrl', function ($scope) {
-                  $scope.menuItems = <?= json_encode($menu_items, JSON_PRETTY_PRINT) ?>;
-                  $scope.currentItem = "";
-                  $scope.eventOnEnterMenuLink = function ($event, itemID) {
-                    var element = $event.target;
-                    $scope.currentItem = _.find($scope.menuItems, function (item) { return item.ID === itemID; });
-                  };
+								App.controller('MenuActivityCtrl', function ($scope) {
+									$scope.menuItems = <?= json_encode( $menu_items, JSON_PRETTY_PRINT ) ?>;
+									$scope.currentItem = "";
+									$scope.eventOnEnterMenuLink = function ($event, itemID) {
+										var element = $event.target;
+										$scope.currentItem = _.find($scope.menuItems, function (item) {
+											return item.ID === itemID;
+										});
+									};
 
-                });
+								});
 							</script>
 							<div ng-app="ActivityApp_<?= $index ?>" ng-controller="MenuActivityCtrl">
 								<div class="uk-padding-large uk-padding-remove-left">
@@ -57,15 +66,18 @@
 				</div>
 
 				<div class="uk-width-1-2@m uk-width-1-1">
-					<div class="uk-padding-small uk-padding-remove-top"
-					     uk-parallax="opacity: 0,1; x: 100, 0; viewport: 0.3">
+					<div
+						class="uk-padding-small uk-padding-remove-top <?php if ( $detector->isMobile() ) : ?> uk-margin-large-bottom <?php endif; ?>">
 						<div ng-controller="galerieCtrl">
-              <activity-galerie galerie-data="<?= $activitie->ID ?>"></activity-galerie>
-            </div>
+							<activity-galerie galerie-data="<?= $activitie->ID ?>"></activity-galerie>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="__org_bg_bottom"></div>
+
+		<?php if ( ! $detector->isMobile() ) : ?>
+			<div class="__org_bg_bottom"></div> <?php endif; ?>
+
 	</div>
 </div>

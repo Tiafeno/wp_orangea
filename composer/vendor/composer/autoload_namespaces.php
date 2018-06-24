@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
+	'Doctrine\\Common\\Inflector\\' => array( $vendorDir . '/doctrine/inflector/lib' ),
+	'Detection'                     => array( $vendorDir . '/mobiledetect/mobiledetectlib/namespaced' ),
 );

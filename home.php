@@ -38,7 +38,20 @@ get_header();
 <div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom" ng-app="activityApp">
 	<!-- s@ -->
 	<style type="text/css">
-		<?php do_action('orangea_home_bg', '.org-section', $post); ?>
+		<?php
+		if ( ! $detector->isMobile()) {
+			do_action('orangea_home_bg', '.org-section', $post);
+		} else {
+			$color = empty($post->bg_color) ? "transparent" : $post->bg_color;
+			?>
+		.org-section .__org-bg {
+			background: <?= $color ?> url(<?= $post->bg_image['url'] ?>) no-repeat left top !important;
+			background-size: cover !important;
+		}
+
+		<?php
+	}
+	?>
 	</style>
 	<div class="org-section __org_parent">
 		<div class="__org-bg __org_parallax">
@@ -63,11 +76,16 @@ get_header();
 										<div class="__menu">
 											<ul class="uk-margin-remove __top_menu_container">
 												<?php foreach ( $lang_menus as $menu ): ?>
-													<li><a href="<?= $menu->home_url ?>"><?= strtoupper( $menu->slug ) ?></a></li>
+													<li>
+														<a href="<?= $menu->home_url ?>">
+															<img
+																src="<?= get_template_directory_uri() . '/img/flag/' . strtolower( $menu->slug ) . '.png' ?>"
+																title="<?= $menu->name ?>"/>
+														</a>
+													</li>
 												<?php endforeach; ?>
 											</ul>
 										</div>
-
 									</div>
 
 									<div class="__primary_menu uk-visible@m">

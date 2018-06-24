@@ -32,15 +32,20 @@ class ComposerStaticIniteb88a0804dd151a5dbe7fcf6cbaa4beb
     public static $prefixesPsr0 = array (
         'D' => 
         array (
-            'Doctrine\\Common\\Inflector\\' => 
+	        'Doctrine\\Common\\Inflector\\' =>
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
+	        'Detection'                     =>
+		        array(
+			        0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+		        ),
         ),
     );
 
     public static $classMap = array (
-        'Normalizer' => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
+	    'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
+	    'Normalizer'    => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

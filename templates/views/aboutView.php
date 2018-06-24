@@ -20,10 +20,12 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+global $detector;
 ?>
 <div class="org-1-section __org_parent">
 	<div class="__org-bg">
-		<div class="__org_bg_top"></div>
+		<?php if ( ! $detector->isMobile() ) : ?>
+			<div class="__org_bg_top"></div> <?php endif; ?>
 		<div class="uk-container uk-container-large  __org_container uk-flex">
 			<div class="uk-padding-large uk-padding-remove-vertical uk-flex">
 				<div class="uk-grid og-padding-medium uk-padding-remove-horizontal uk-margin-auto-vertical">
@@ -50,7 +52,8 @@
 
 			</div>
 		</div>
-		<div class="__org_bg_bottom"></div>
+		<?php if ( ! $detector->isMobile() ) : ?>
+			<div class="__org_bg_bottom"></div> <?php endif; ?>
 	</div>
 </div>
 

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/actions/actions.iml" filepath="$PROJECT_DIR$/actions/actions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mutsa/mutsa.iml" filepath="$PROJECT_DIR$/mutsa/mutsa.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/wp_orangea.iml" filepath="$PROJECT_DIR$/.idea/wp_orangea.iml" />
     </modules>
   </component>

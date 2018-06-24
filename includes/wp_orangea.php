@@ -140,6 +140,7 @@ class WP_Orangea {
 		query_posts( $args );
 		if ( have_posts() ) {
 			while ( have_posts() ): the_post();
+				setup_postdata( get_the_ID() );
 				// Il est important d'appliquer la filtre 'the_content'
 				// Pour executer les autres filtres qui s'accroche sur cette l'article
 				apply_filters( 'the_content', get_the_content() );

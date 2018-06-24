@@ -2,11 +2,10 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="H:/wordpress-4.9.5" />
-      <path value="$PROJECT_DIR$/composer/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/composer/vendor/composer" />
-      <path value="$PROJECT_DIR$/composer/vendor/patchwork/utf8" />
-      <path value="$PROJECT_DIR$/composer/vendor/anahkiasen/underscore-php" />
+      <path value="$PROJECT_DIR$/../../../../managna" />
+      <path value="$PROJECT_DIR$/composer/vendor/anahkiasen" />
+      <path value="$PROJECT_DIR$/composer/vendor/doctrine" />
+      <path value="$PROJECT_DIR$/composer/vendor/patchwork" />
     </include_path>
   </component>
 </project>

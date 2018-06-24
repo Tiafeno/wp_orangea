@@ -1,6 +1,7 @@
 <?php
 use Underscore\Types\Arrays;
 // global $section, $parents, $background, $galleries;
+global $detector;
 ?>
 <style type="text/css">
   <?php do_action('orangea_section_bg', '.org-2-section', $section, $background); ?>
@@ -25,10 +26,10 @@ use Underscore\Types\Arrays;
 					<div class="uk-margin-auto-vertical __org_bg_sensor">
 						<div class="uk-padding-large uk-padding-remove-horizontal uk-padding-remove-bottom  __org_support"
 						     id="<?= $section->post_name ?>"
-						     uk-parallax="opacity: 0,1; y: -100, 0; viewport: 0.3">
+							<?php if ( ! $detector->isMobile() ) { ?> uk-parallax="opacity: 0,1; y: -100, 0; viewport: 0.3" <?php } ?>>
 							<div class="container-content uk-padding-large uk-padding-remove-vertical">
 								<h2 class="__org_header_white ui header uk-margin-small-top"
-								    uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3">
+									<?php if ( ! $detector->isMobile() ) { ?> uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.3" <?php } ?>>
 									<?= $section->post_title ?>
 								</h2>
 								<div class="uk-margin-medium-top uk-margin-medium-bottom">
