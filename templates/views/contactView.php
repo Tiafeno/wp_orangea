@@ -32,6 +32,10 @@
 		background-color: #211e1e;
 	}
 
+	.org-nine-section .contact-info a {
+		color: #fbbd08;
+	}
+
 	.org-nine-section h2,
 	.org-nine-section aside {
 		text-align: center;

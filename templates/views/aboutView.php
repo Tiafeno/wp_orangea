@@ -28,10 +28,11 @@ global $detector;
 			<div class="__org_bg_top"></div> <?php endif; ?>
 		<div class="uk-container uk-container-large  __org_container uk-flex">
 			<div class="uk-padding-large uk-padding-remove-vertical uk-flex">
-				<div class="uk-grid og-padding-medium uk-padding-remove-horizontal uk-margin-auto-vertical">
+				<div class="uk-grid og-padding-medium uk-padding-remove-horizontal uk-margin-auto-vertical"
+				     style="padding-top: 2px">
 					<div class="uk-width-1-2@m uk-width-1-1 uk-flex">
 						<div id="<?= $section->post_name ?>">
-							<div class="uk-flex" style="height: 100%">
+							<div class="" style="height: 100%">
 								<img src="<?= get_template_directory_uri() . '/img/SVG/orangea-hotels.svg' ?>"
 								     onerror="this.onerror=null; this.src='<?= get_template_directory_uri() . '/img/2x/orangea-hotels@2x.png' ?>'"
 								     class="uk-logo"

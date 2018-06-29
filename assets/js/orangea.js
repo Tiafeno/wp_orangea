@@ -189,7 +189,7 @@
       var _1_container = $(".org-section").find(".__org_container");
       var _2_container = first_section.find(".__org_container");
       var newContainerHeight;
-      newContainerHeight = Math.abs(windowHeight - Math.ceil(_2_container.height()));
+      newContainerHeight = Math.abs(windowHeight - (Math.ceil(_2_container.height() / 2)));
       var cssObj = {
         "min-height": newContainerHeight + "px"
       };

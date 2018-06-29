@@ -368,17 +368,6 @@
 
 		.org-6-section .__org-bg {
 			/*background: #ebe1df url(
-
-
-
-
-
-
-
-
-
-
-
 		<?= esc_url( get_template_directory_uri() ); ?>            /img/unsplash.jpg) no-repeat top left; */
 			background-attachment: fixed;
 			background-size: cover;
