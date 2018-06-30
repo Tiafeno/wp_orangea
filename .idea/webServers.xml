@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="08b0313d-be6d-4c06-b4ff-d3db7014ff86" name="Orangea Hotels" url="http://orangea-hotel.com">
+        <fileTransfer host="orangea-hotel.com" port="21" rootFolder="/wp-content/themes/wp_orangea">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
