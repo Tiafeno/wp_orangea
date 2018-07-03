@@ -21,7 +21,7 @@
 											<p style="text-align: right; color: #fff;">
 												<a href="http://www.falicrea.com" title="FALICREA" target="_blank"
 												   style="color: #858585; font-size: 9px; font-weight: 700; letter-spacing: 1px">
-													<?= pll_e( "STRATÉGIE, CONCEPTION, MARKETING ET SOUTENU PAR" ) ?> <b>FALICREA</b>
+													<?= pll_e( "STRATÉGIE, CONCEPTION SOUTENU PAR" ) ?> <b>FALICREA</b>
 												</a>
 											</p>
 										</div>

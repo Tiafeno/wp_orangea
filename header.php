@@ -7,7 +7,7 @@
 		-->
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=525, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=525">
 	<!--	<meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -414,6 +414,15 @@
 			}
 			100% {
 				transform: scale(1.80);
+			}
+		}
+
+		@media (max-width: 525px) {
+
+			body,
+			div.org-4-section .__menu li > a,
+			.__menu_dashed li > a {
+				font-size: 16px;
 			}
 		}
 	</style>

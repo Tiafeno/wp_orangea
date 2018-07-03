@@ -213,7 +213,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 if ( function_exists( "pll_register_string" ) ) :
 	pll_register_string( sitename, "MENU" );
 	pll_register_string( sitename, "Book" );
-	pll_register_string( sitename, "STRATÉGIE, CONCEPTION, MARKETING ET SOUTENU PAR" );
+	pll_register_string( sitename, "STRATÉGIE, CONCEPTION SOUTENU PAR" );
 else:
 	exit( "Function `pll_register_string` is not define, please active polylang plugins" );
 endif;

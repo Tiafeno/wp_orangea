@@ -30,6 +30,7 @@
   currentList = [];
   $(document).ready(function () {
     var windowHeight;
+
     // Positionner la ligne sous le menu
     function positionLines(positionIndex) {
       return new Promise(function (resolve, reject) {
@@ -108,11 +109,11 @@
     });
 
     if (QUnitTest) {
-      QUnit.test("Orangea script basics", async function( assert ) {
+      QUnit.test("Orangea script basics", async function (assert) {
         currentList = allMenuLine.eq(0).find('li');
         var requestPosition = await positionLines(2);
         assert.equal(requestPosition, true, 'La requete sur la verification de position a étes effectuer avec success');
-        assert.ok( currentList, "currentList variable is'nt empty" );
+        assert.ok(currentList, "currentList variable is'nt empty");
       });
     }
 
@@ -139,7 +140,7 @@
        * Ajouter une ligne d'animation sur l'objet definie
        */
       var line = $('.__menu_line').find('.line');
-      if ( ! _.isEmpty(line))
+      if (!_.isEmpty(line))
         line.css({
           height: "2px",
           "margin-left": "10px"
