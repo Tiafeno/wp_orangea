@@ -45,7 +45,7 @@ App.directive('activityGalerie', ['HTTPServices', 'Convert', '$window', function
           });
           $window.setInterval(function () {
             var position = _.random(0, loadData.length - 1);
-            scope.imageUrl = loadData[position].blob;
+            scope.imageUrl = _.isObject(loadData[position]) ? loadData[position].blob : null;
             scope.$apply();
           }, 2500);
         }, function (error) {

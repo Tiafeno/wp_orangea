@@ -102,10 +102,11 @@
 					var posts = postMediaBg.concat();
 					var position = _.random(0, posts.length - 1);
 					var post = posts[position];
-					if (!_.isUndefined(post.blob))
+					if (_.isObject(post) && !_.isUndefined(post.blob)) {
 						Element.css({
 							'background-image': "url(" + post.blob + ")"
 						});
+					}
 				}, timeout);
 			}
 		};
