@@ -25,27 +25,11 @@ global $detector;
 $localUrl = esc_url( get_template_directory_uri() ) . "/img/unsplash.jpg";
 $url = isset($background->url) ? $background->url : $localUrl;
 ?>
-<style type="text/css">
-	<?php
-	if ( ! $detector->isMobile()) {
-		do_action('orangea_section_bg', '.org-6-section', $section, $background);
-	} else {
-		$color = empty($background->color) ? "transparent" : $background->color;
-		?>
-	.org-6-section .__org-bg {
-		background: <?= $color ?> url(<?= $url ?>) no-repeat left top;
-		background-size: contain;
-	}
 
-	<?php
-}
-
-?>
-</style>
 
 <div class="org-6-section devider-background __org_parent">
 	<div class="__org-bg" >
-		<?php if ( ! $detector->isMobile() ) : ?> <img src="<?= $url ?>" scale-animation> <?php endif; ?>
+		<?php if ( ! $detector->isMobile() ) : ?> <img src="<?= $url ?>" style="position: absolute: heignt: inherit; width: 100%" > <?php endif; ?>
 		<div class="__org-bg-shadow">
 			<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
 				<div class="__org_support uk-padding-large uk-margin-large-bottom">
@@ -65,3 +49,21 @@ $url = isset($background->url) ? $background->url : $localUrl;
 		</div>
 	</div>
 </div>
+
+<style type="text/css">
+	<?php
+	if ( ! $detector->isMobile()) {
+		do_action('orangea_section_bg', '.org-6-section', $section, $background);
+	} else {
+		$color = empty($background->color) ? "transparent" : $background->color;
+		?>
+	.org-6-section .__org-bg {
+		background: <?= $color ?> url(<?= $url ?>) no-repeat left top;
+		background-size: contain;
+	}
+
+	<?php
+}
+
+?>
+</style>
