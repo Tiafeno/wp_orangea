@@ -29,7 +29,7 @@ $url = isset($background->url) ? $background->url : $localUrl;
 
 <div class="org-6-section devider-background __org_parent">
 	<div class="__org-bg" >
-		<?php if ( ! $detector->isMobile() ) : ?> <img src="<?= $url ?>" style="position: absolute: heignt: inherit; width: 100%" > <?php endif; ?>
+		<?php if ( ! $detector->isMobile() ) : ?> <img src="<?= $url ?>" style="position: absolute: height: inherit; width: 100%" > <?php endif; ?>
 		<div class="__org-bg-shadow">
 			<div class="uk-container uk-container-large uk-padding-remove-bottom __org_container">
 				<div class="__org_support uk-padding-large uk-margin-large-bottom">
