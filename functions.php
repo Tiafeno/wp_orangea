@@ -63,6 +63,17 @@ add_action('init', function () {
 });
 
 add_action('after_setup_theme', function () {
+	$defaults = array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array('site-title', 'site-description'),
+	);
+	add_theme_support('custom-logo', $defaults);
+});
+
+add_action('after_setup_theme', function () {
 	load_theme_textdomain('twentyfifteen');
 	load_theme_textdomain(sitename, get_template_directory() . '/languages');
 
@@ -217,6 +228,6 @@ else :
 	add_action('admin_notices', function () {
 		$class = 'notice notice-error';
 		$message = "Function `pll_register_string` is not define, please active polylang plugins";
-		printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
+		printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
 	});
 endif;

@@ -33,26 +33,16 @@ set_query_var( 'post_acf', $post_acf );
 // Home page ACF
 WP_Orangea::get_page_acf_params( $post );
 get_header();
+
+
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+$logo = has_custom_logo() ? $image[0] : get_template_directory_uri() . '/img/2x/logo@2x.png';
 ?>
 
 <div class="uk-section uk-section-large uk-padding-remove-top uk-padding-remove-bottom" ng-app="activityApp">
 	<!-- s@ -->
-	<style type="text/css">
-		<?php
-		if ( ! $detector->isMobile()) {
-			do_action('orangea_home_bg', '.org-section', $post);
-		} else {
-			$color = empty($post->bg_color) ? "transparent" : $post->bg_color;
-			?>
-		.org-section .__org-bg {
-			background: <?= $color ?> url(<?= $post->bg_image['url'] ?>) no-repeat left top !important;
-			background-size: cover !important;
-		}
-
-		<?php
-	}
-	?>
-	</style>
+	
 	<div class="org-section __org_parent">
 		<div class="__org-bg __org_parallax">
 			<div class="__org-bg-shadow">
@@ -62,7 +52,7 @@ get_header();
 							<div class="__org_logo">
 								<!-- logo -->
 								<a target="_parent" href="<?= home_url( '/' ) ?>">
-									<img class="uk-logo" width="180" src="<?= get_template_directory_uri() . '/img/2x/logo@2x.png' ?>"/>
+									<img class="uk-logo" width="180" src="<?= $logo ?>"/>
 								</a>
 								<!-- .end logo -->
 							</div>
@@ -134,7 +124,26 @@ get_header();
 		</div>
 	</div>
 	<!-- .end s@ -->
+
+	<style type="text/css">
+		<?php
+		if ( ! $detector->isMobile()) {
+			do_action('orangea_home_bg', '.org-section', $post);
+		} else {
+			$color = empty($post->bg_color) ? "transparent" : $post->bg_color;
+			?>
+		.org-section .__org-bg {
+			background: <?= $color ?> url(<?= $post->bg_image['url'] ?>) no-repeat left top !important;
+			background-size: cover !important;
+		}
+
+		<?php
+	}
+	?>
+	</style>
 	<?php
+
+	
 
 	get_template_part( 'templates/controller', 'about' );
 	get_template_part( 'templates/controller', 'accommodation' );
