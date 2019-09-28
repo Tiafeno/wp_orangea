@@ -33,6 +33,7 @@ if ( isset( $post_acf ) ) {
 
 if ( ! empty( $section ) ):
 	list( $accommodation ) = array_values( $section );
+	
 	$parents = [];
 	// Récuperer la galleries
 	$galleries = get_field( '__org_bg_galeries', $accommodation->ID );

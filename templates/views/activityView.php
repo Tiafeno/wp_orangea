@@ -1,5 +1,13 @@
 <?php
 global $detector;
+
+$shortcodes_custom_css = get_post_meta($activitie->ID, '_wpb_shortcodes_custom_css', true);
+if (!empty($shortcodes_custom_css)) {
+	$shortcodes_custom_css = strip_tags($shortcodes_custom_css);
+	echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+	echo $shortcodes_custom_css;
+	echo '</style>';
+}
 ?>
 <div id="<?= $identification ?>" class="<?= $class ?> __org_parent">
 	<div class="__org-bg">

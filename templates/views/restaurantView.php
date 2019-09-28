@@ -20,6 +20,14 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
+$shortcodes_custom_css = get_post_meta($section->ID, '_wpb_shortcodes_custom_css', true);
+if (!empty($shortcodes_custom_css)) {
+	$shortcodes_custom_css = strip_tags($shortcodes_custom_css);
+	echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+	echo $shortcodes_custom_css;
+	echo '</style>';
+}
 ?>
 <style type="text/css">
   <?php do_action('orangea_section_bg', '.org-5-section', $section, $background); ?>

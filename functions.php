@@ -60,6 +60,18 @@ add_action('init', function () {
 		'menu_icon'       => 'dashicons-exerpt-view',
 		'supports'        => ['title', 'editor', 'excerpt', 'thumbnail', 'custom-fields']
 	));
+
+
+	
+
+	
+
+});
+
+add_action('wp_load', function () {
+
+
+	
 });
 
 add_action('after_setup_theme', function () {
@@ -178,9 +190,73 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_script('menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), $version, true);
 
 	/** Visual composer dependance */
-	wp_enqueue_script('simpleImageSlider', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/simpleImageSlider.min.js', array('jquery'), $version, true);
-	wp_enqueue_script('slick', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/slick.custom.min.js', array('jquery'), $version, true);
-	wp_enqueue_script('fullHeightRow', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/row/row/public/dist/fullHeightRow.min.js', array('jquery'), $version, true);
+	//wp_enqueue_script('simpleImageSlider', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/simpleImageSlider.min.js', array('jquery'), $version, true);
+	//wp_enqueue_script('slick', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/simpleImageSlider/simpleImageSlider/public/dist/slick.custom.min.js', array('jquery'), $version, true);
+	//wp_enqueue_script('fullHeightRow', $upload_dir['baseurl'] . '/visualcomposer-assets/elements/row/row/public/dist/fullHeightRow.min.js', array('jquery'), $version, true);
+	$localLang = pll_current_language();
+	$args_sections = [
+		'post_type' => _OG_POSTTYPE_,
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'lang'           => $localLang,    // use language slug in the query
+	];
+	$query_sections = new WP_Query($args_sections);
+	if ($query_sections->have_posts()) {
+		while($query_sections->have_posts()): $query_sections->the_post();
+
+			$css_file = get_post_meta( get_the_ID(), 'vcvSourceCssFileUrl', true );
+			if ($css_file) {
+				$file = home_url( '/wp-content/uploads/visualcomposer-assets' ) . $css_file;
+				wp_enqueue_style(get_the_ID() . '-orangea-section', $file, '');
+			}
+			
+			
+			$assets_files = get_post_meta( get_the_ID(), 'vcvSourceAssetsFiles', true );
+			if ($assets_files) {
+				if (is_array($assets_files)) {
+					foreach ($assets_files as $key => $value) {
+						if ($key === "jsBundles") {
+							$js_bundles = $value;
+							if (is_array($js_bundles)) {
+								foreach ($js_bundles as $bundle) {
+									# code...
+									$urls = [
+										"wp-content/uploads/visualcomposer-assets/",
+										"wp-content/plugins/visualcomposer/public/sources/",
+									];
+		
+									foreach ($urls as $url) {
+										wp_enqueue_script(md5($bundle), home_url('/' . $url) . $bundle, array("jquery"));
+									}
+								}
+							}
+						}
+
+						if ($key === 'cssBundles') {
+							$css_bundles = $value;
+							if (is_array($css_bundles)) {
+								foreach ($css_bundles as $css) {
+									# code...
+									$urls = [
+										"wp-content/uploads/visualcomposer-assets/",
+										"wp-content/plugins/visualcomposer/public/sources/",
+									];
+		
+									foreach ($urls as $i => $url) {
+										wp_enqueue_style(md5(rand($i, 50)) . '-css-bundle', home_url('/'.$url) . $css, '');
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		endwhile;
+	}
+	wp_reset_postdata();
+	wp_reset_query();
+
 });
 
 

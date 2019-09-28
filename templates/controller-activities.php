@@ -41,6 +41,7 @@ if ( isset( $post_acf ) ) :
 endif;
 if ( is_array( $section ) ):
 	foreach ( array_values( $section ) as $index => $activitie ) :
+
 		$activity_menu  = empty( $activitie->__org_activity_menu ) ? null : $activitie->__org_activity_menu;
 		$class          = ! empty( $activitie->__org_section_class ) ? $activitie->__org_section_class : "";
 		$identification = ! empty( $activitie->__org_section_id ) ? $activitie->__org_section_id : '';

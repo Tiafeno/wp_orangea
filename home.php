@@ -34,6 +34,9 @@ set_query_var( 'post_acf', $post_acf );
 WP_Orangea::get_page_acf_params( $post );
 get_header();
 
+wp_enqueue_script( 'wpb_composer_front_js' );
+wp_enqueue_style( 'js_composer_front' );
+wp_enqueue_style( 'js_composer_custom_css' );
 
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -125,22 +128,7 @@ $logo = has_custom_logo() ? $image[0] : get_template_directory_uri() . '/img/2x/
 	</div>
 	<!-- .end s@ -->
 
-	<style type="text/css">
-		<?php
-		if ( ! $detector->isMobile()) {
-			do_action('orangea_home_bg', '.org-section', $post);
-		} else {
-			$color = empty($post->bg_color) ? "transparent" : $post->bg_color;
-			?>
-		.org-section .__org-bg {
-			background: <?= $color ?> url(<?= $post->bg_image['url'] ?>) no-repeat left top !important;
-			background-size: cover !important;
-		}
 
-		<?php
-	}
-	?>
-	</style>
 	<?php
 
 	
@@ -154,4 +142,21 @@ $logo = has_custom_logo() ? $image[0] : get_template_directory_uri() . '/img/2x/
 
 	get_footer();
 	?>
+
+<style type="text/css">
+	<?php
+	if ( ! $detector->isMobile()) {
+		do_action('orangea_home_bg', '.org-section', $post);
+	} else {
+		$color = empty($post->bg_color) ? "transparent" : $post->bg_color;
+		?>
+	.org-section .__org-bg {
+		background: <?= $color ?> url(<?= $post->bg_image['url'] ?>) no-repeat left top !important;
+		background-size: cover !important;
+	}
+
+	<?php
+	}
+	?>
+</style>
 

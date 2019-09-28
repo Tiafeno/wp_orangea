@@ -25,6 +25,14 @@
 global $detector;
 $localUrl = esc_url(get_template_directory_uri()) . "/img/unsplash.jpg";
 $url = isset($background->url) ? $background->url : $localUrl;
+
+$shortcodes_custom_css = get_post_meta($section->ID, '_wpb_shortcodes_custom_css', true);
+if (!empty($shortcodes_custom_css)) {
+	$shortcodes_custom_css = strip_tags($shortcodes_custom_css);
+	echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+	echo $shortcodes_custom_css;
+	echo '</style>';
+}
 ?>
 
 
@@ -42,7 +50,11 @@ $url = isset($background->url) ? $background->url : $localUrl;
 							<?= $section->__org_subtitle ?>
 						</aside>
 						<div class="uk-margin-medium-top">
-							<?php echo apply_filters("the_content", $section->post_content) ?>
+							<?php 
+							
+							$content = $section->post_content;
+							echo apply_filters('the_content', $content);
+							?>
 						</div>
 					</div>
 				</div>

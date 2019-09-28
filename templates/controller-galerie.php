@@ -29,7 +29,8 @@ if (isset($post_acf))
 	} );
 
 if ( ! empty( $section ) ) :
-	list( $galerie ) = array_values( $section );
+  list( $galerie ) = array_values( $section );
+  
   og_get_view_content('galerie', [
     'section' => $galerie,
     'background' => WP_orangea_services::get_post_bg_options($galerie)

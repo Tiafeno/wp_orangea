@@ -21,6 +21,14 @@
  *
  */
 global $detector;
+
+$shortcodes_custom_css = get_post_meta($section->ID, '_wpb_shortcodes_custom_css', true);
+if (!empty($shortcodes_custom_css)) {
+	$shortcodes_custom_css = strip_tags($shortcodes_custom_css);
+	echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+	echo $shortcodes_custom_css;
+	echo '</style>';
+}
 ?>
 <div class="org-1-section __org_parent">
 	<div class="__org-bg">
@@ -30,17 +38,7 @@ global $detector;
 			<div class="uk-padding-large uk-padding-remove-vertical uk-flex">
 				<div class="uk-grid og-padding-medium uk-padding-remove-horizontal uk-margin-auto-vertical"
 				     style="padding-top: 2px">
-					<div class="uk-width-1-2@m uk-width-1-1 uk-flex">
-						<div id="<?= $section->post_name ?>">
-							<div class="" style="height: 100%">
-								<img src="<?= get_template_directory_uri() . '/img/SVG/orangea-hotels.svg' ?>"
-								     onerror="this.onerror=null; this.src='<?= get_template_directory_uri() . '/img/2x/orangea-hotels@2x.png' ?>'"
-								     class="uk-logo"
-								     width="420"/>
-							</div>
-						</div>
-					</div>
-					<div class="uk-width-1-2@m uk-width-1-1 uk-flex">
+					<div id="<?= $section->post_name ?>" class="uk-width-1-1@m uk-width-1-1">
 						<div class="uk-margin-auto-vertical">
 
 							<div class="uk-margin-medium-top">
